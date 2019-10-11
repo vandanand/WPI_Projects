@@ -8,7 +8,7 @@
 ;;a Contact where
 ;;name is the customer's name
 ;;address is the customer's address
-;;email is the customer's email address
+;;email is the customer's email address 
 
 (define-struct charge (busname amount))
 ;;a Charge is a (make-charge String Number)
