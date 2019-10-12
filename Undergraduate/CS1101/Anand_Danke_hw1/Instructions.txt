@@ -25,14 +25,20 @@ the total box office receipts collected so far for the film (in millions of doll
 
 Problems
 1. Provide data definitions for both a Film and a Date. The name of the struct for a Film should be film, and the name of the struct for a Date should be date. Failure to define the structs with these names will cause our auto-tester to fail, and you will lose points. Include both the define-structs and at least three examples for each data definition. When creating a struct, the order of the fields in the constructor should match the order given in the descriptions above. The names of the fields in the struct don't matter, but the order does. For example, the fields of the struct for a film should be the title, genre, running time, opening date, and receipts collected, in that order. Failure to define the fields in the given order will cause our auto-tester to fail, and you will lose points. Your struct for a date should have 3 fields, one for the year, one for the month, and one for the day, in that order. Each field in a date is of type Natural.
+
 2. In a comment in the Defintions Window, provide the signatures of all the operators that are created by Racket for your Film struct. Give the signatures only (not the purposes).
+
 3. You're going on a first date. You want to suggest to your partner a movie that's funny and that doesn't last too long. Write a function short-comedy? which consumes a Film and some number of minutes. The function returns true if the film is a comedy that runs for less than the given number of minutes; otherwise, the function returns false.
+
 4. Write a function film-with-more-receipts. The function consumes two Films and produces a Film. The film produced is the one with the higher number of box-office receipts. If both films have the same number of receipts, the function may return either one.
+
 5. Customers have been suggesting that the running time for a film should include the time for any trailers that are shown before the main feature begins. Write a function add-time-for-trailers which consumes a Film and a number of trailers, and produces a Film. The film that is produced is the same as the original except that the film's running time has been increased by 3 minutes for each trailer that is shown prior to the film.
+
 6. Write a function opens-before?, which consumes a Film and a Date, and produces a Boolean. The function produces true if the given film opens before the given date, and returns false otherwise.
 
 Grading
 Here is the grading rubric that the graders will use for Homework 1.
+
 What to Turn In
 Submit your .rkt file to InstructAssist. The name of the project in IntructAssist is Homework 1. Follow the naming conventions for homework files. BOTH partners' names and wpi usernames MUST be listed in a comment at the beginning of your file (you will lose points if these rules are not followed). Programs are due at 5pm on Wednesday, September 6. Late programs will be accepted until 5pm on Thursday, September 7. Programs will not be accepted for submission after 5pm on Thursday, September 7. No exceptions.
 
