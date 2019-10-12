@@ -1,0 +1,60 @@
+OUTPUT OF OUR TESTS:
+
+Ran: ./p4 < file1.txt
+
+Instruction?: 0,map,0,1
+Put page table for PID 0 into physical frame 0
+Mapped virtual address 0 (page 0) into physical frame 1
+Instruction?: 0,store,12,24
+Stored value 24 at virtual address 12 (physical address 28)
+Instruction?: 0,load,12,0
+Loaded value 24 at virtual address 12 (physical address 28)
+Instruction?: END OF FILE!
+
+Ran: ./p4<file2.txt
+Instruction?: 0,map,0,0
+Put page table for PID 0 into physical frame 0
+Mapped virtual address 0 (page 0) into physical frame 1
+Instruction?: 0,store,7,255
+ERROR! Cannot write to this page.
+Instruction?: 0,load,7,0
+Loaded value 0 at virtual address 7 (physical address 23)
+Instruction?: 0,map,0,1
+Put page table for PID 0 into physical frame 2
+Mapped virtual address 0 (page 0) into physical frame 3
+Instruction?: 0,store,7,255
+Stored value 255 at virtual address 7 (physical address 55)
+Instruction?: 0,load,7,0
+Loaded value 255 at virtual address 7 (physical address 55)
+Instruction?: END OF FILE 
+
+Ran: ./p4<file3.txt
+Instruction?: 0,map,0,0
+Put page table for PID 0 into physical frame 0
+Mapped virtual address 0 (page 0) into physical frame 1
+Instruction?: 0,store,7,255
+ERROR! Cannot write to this page.
+Instruction?: 0,map,0,1
+Put page table for PID 0 into physical frame 2
+Mapped virtual address 0 (page 0) into physical frame 3
+Instruction?: 0,store,7,255
+Stored value 255 at virtual address 7 (physical address 55)
+Instruction?: 0,load,7,0
+Loaded value 255 at virtual address 7 (physical address 55)
+Instruction?: END OF FILE!
+
+Ran: ./p4<file4.txt
+
+Instruction?: 0,map,4,23
+ERROR! The value has to be either 0 or 1
+Instruction?: 0,load,47,-1
+ERROR! This is an invalid entry
+ERROR! Segmentation Fault.
+Instruction?: 0,store,25,256
+ERROR! This is an invalid entry
+ERROR! Segmentation fault.
+Instruction?: END OF FILE!
+
+
+
+
