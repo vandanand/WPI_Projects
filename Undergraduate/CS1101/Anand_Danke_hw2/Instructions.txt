@@ -1,1 +1,56 @@
+CS 1101 - A-term 17
+Homework 2 - Itemizations and Simple List Processing
+Due: Tuesday, September 12 at 5pm
+Read the expectations on homework.
+
+Assignment Goals
+To make sure you can define itemizations and write programs over itemizations
+To make sure you can define simple lists and write programs over lists
+
+The Assignment
+Writing Data Definitions for Itemizations (you'll be doing this part in Lab 2)
+A library lends different kinds of items. In this assignment, you'll write programs that define and process library items.
+
+A library item can be any one of the following (use the names in bold letters to name your structs). Failure to name the structs with the given names will cause our auto-tester to fail, and you will lose points.
+
+book: Information required for a book consists of the title and author of the book, the ISBN number (a Natural), whether or not the book is hard-cover or paperback (true if bound with a hard-cover, false if not), the name of the publisher, the year of publication, and the number of copies.
+periodical: The definition of a periodical consists of the name of the periodical, the volume number, and the issue number.
+cd: A book on CD has a title and author, the name of the narrator, the number of disks, the year of publication, the total amount of playing time (in minutes), and the number of copies.
+
+1. Develop a data definition for each type of library item described above, and a data definition for an itemization for library items. When creating a struct, the order of the fields in the struct should match the order given in the descriptions above. For example, the fields of the struct for a book should be the title, author, ISBN, whether it's hard-cover or not, the name of the publisher, the year of publication, and the number of copies, in that order. Failure to define the fields in the given order will cause our auto-tester to fail, and you will lose points.
+
+2.Provide at least one example for each kind of library item.
+Ask a lab assistant to check over your work at this point.
+
+Writing Programs for Itemizations
+3. Provide the template for each data definition you made in Problem 1 (including the itemization).
+Ask a lab assistant to check over your templates.
+
+If you're working with a homework partner... You and your partner should review the data definitions and templates you each came up with in Lab 2. Make changes, if necessary, and complete any of the exercises you didn't get to during the lab. Create your Homework 2 file according to the naming conventions for homework files, and copy/paste your data definitions and templates into your homework file.
+
+If you're working by yourself... copy your Lab 2 work into your Homework 2 file (name your file yourLastName-hw2), and continue working on Homework 2.
+
+Everyone... Make sure your function names are exactly the same as the names given in the problems. Otherwise, our auto-tester will fail, and you will lose points.
+
+4. Write a function contributor? that consumes a library item and a name and produces a boolean. The function returns true if the library item is a book whose author has the given name or if the item is a CD where either the author or the narrator (or both) have the given name. The function returns false otherwise (it always returns false for a periodical).
+
+5. Write a function add-copy that consumes a library item and produces a library item. The library item is returned unchanged if the given item is a periodical. Otherwise, the item that's produced is the same as the original, except that the number of copies of the item has been increased by 1.
+
+Writing Programs for Simple Lists
+In the following problems, use this data defintion for ListOfString:
+;; a ListOfString is one of
+;;  empty
+;;  (cons String ListOfString)
+;; interp:  ListOfString represents a list of strings
+
+6. Develop a function character-count that consumes a ListOfString and counts the total number of characters in all strings in the list.
+
+7. Develop a function numeric-strings that consumes a ListOfString and produces a ListOfString. The list that's produced contains only those strings from the original list that consist entirely of numeric characters. (Hint: check the DrRacket help desk for various built-in string functions that will help you solve this problem).
+
+8. Develop a function count-X that consumes a ListOfString and counts the total number of X's (upper and lower case) that occur in all strings in the list. Hint: helper functions are your friend. Check the help desk again for built-in-functions that might be useful.
+
+What to Turn In
+Here is the grading sheet that the graders will be using for Homework 2.
+Submit your .rkt file to InstructAssist. The name of the project is Homework 2. Make sure both partners' names and login names appear at the top of the file in a comment.
+
 
