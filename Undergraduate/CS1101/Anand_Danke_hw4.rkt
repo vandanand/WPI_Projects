@@ -1,7 +1,7 @@
 ;;Vandana Anand and Manasi Danke
 ;;vanand and mmdanke
 
-;;Problem 1
+;;Problem 1 
 
 (define-struct contact (name address email))
 ;;a Contact is a (make-contact String String String)
