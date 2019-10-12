@@ -1,4 +1,6 @@
-               Project 1 – Finding the Greatest Common Divisor
+Project 1 – Finding the Greatest Common Divisor
+
+
 
 How to run my code:
 
