@@ -21,6 +21,7 @@ In the Python Shell:
 
 
 In the Command Line:
+
 1. Save the Python file to a location on your computer.
 
 2. Put in an array of points into an input file and save it as input.txt in the same folder as the python code file.
