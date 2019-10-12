@@ -1,0 +1,10 @@
+4,kathi,13:52:21,screenshot.png,false,1724000
+4,jordan,02:36:03,funnycat.png,false,151
+4,simmon,13:20:13,project.ppt,false,3600
+4,simmon,09:22:07,screenshot.png,false,1024000
+4,simmon,06:18:05,funnycat.png,false,464
+4,kathi,08:21:04,funnycat.png,false,561
+4,root,15:36:08,project.ppt,false,8810
+4,kathi,04:39:03,screenshot.png,false,2324000
+4,root,16:42:06,funnycat.png,false,991
+4,jordan,15:21:21,maillist.txt,false,112

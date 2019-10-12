@@ -1,0 +1,13 @@
+6,root,00:12:20,true
+6,root,00:56:00,false
+6,root,00:57:16,false
+6,kathi,00:57:20,true
+6,root,01:00:16,false
+6,root,01:00:40,false
+6,jordan,05:42:13,false
+6,jordan,06:13:20,true
+6,kathi,08:58:18,true
+6,kathi,12:15:11,true
+6,kathi,16:57:01,true
+6,kathi,18:02:13,true
+6,simmon,19:16:08,false
