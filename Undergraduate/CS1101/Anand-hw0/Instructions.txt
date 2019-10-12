@@ -1,0 +1,82 @@
+CS 1101 - A-term 17
+Homework 0 - Intro to Racket and Composing Functions
+Due: Wednesday, August 30 at 5pm
+Assignment Goals
+To become familiar with the terms expression, operator, operand, function, constant, function definition, function call, argument, parameter.
+To understand how Racket evaluates expressions.
+To make sure you can write simple functions.
+To learn how to document a function with a signature and purpose.
+To become familiar with DrRacket's helpdesk.
+To be able to compose functions (combine simple functions into more complicated functions).
+To gain familiarity with the use of images as data.
+The Assignment
+Preliminaries
+Start up DrRacket. If this is the first time you've brought up DrRacket, you will be asked to choose a language. From the Language menu, choose Choose Language. From How to Design Programs, select Beginning Student. If a Show Details button appears in the bottom left-hand corner of the window, click it. On the right-hand side of the window look at the panel that says Output Syntax. Under Constant Style choose true false empty. Click the OK button. Now, in the definitions window, write a comment that includes your name and your username (and those of your partner, if you're working with a homework partner). From the File menu, choose Save Definitions As.... Name your file according to the naming conventions for homework files. Click the Run button.
+NOTE: DrRacket saves the work done in the Definitions window only.
+
+As you answer each of the remaining problems, use comments in your file to clearly indicate the number of the problem you are solving, e.g..
+
+;;
+;;  Problem 1
+;;
+Expression Evaluation
+Evaluate each of the following expressions. Show every step in the evaluation. Provide your answers as comments in the Definitions window. For example, to evaluate the expression
+(* (+ 4 3) 9)
+You should provide the following comments in the Definitions window:
+;; (* (+ 4 3) 9)
+;; (* 7 9)
+;; 63
+(You may use Racket's "comment out with a box" feature instead of using semi-colons if you prefer.)
+
+(a.)
+(string-append 
+  (substring "CS110X" 0 5)
+  (if (> 5 (+ 6 3))
+        "1"
+        "2"))
+(b.)
+
+(if (and (< (triple 3) (+ 5 2))
+         true)
+    (triple (+ 6 (- 19 4)))
+    (* 7 (triple 5)))
+where triple is defined as
+(define (triple n)
+   (* n 3))
+Composing Functions
+Provide a signature and purpose for each function you write.
+In class and in the videos you were introduced to some built-in functions (like rectangle and text) from the image library. Add the following line to the Definitions window:
+(require 2htdp/image)
+Now click the Run button. The functions in the image library are now available to your program.
+From the Help menu, choose Help Desk. A browser window will open. Under the Teaching heading, choose How to Design ProgramsTeachpacks. In the left margin, click on HtDP/2e Teachpacks. Here you will find a description of all the pre-defined functions in the image.ss library. Notice the ...search manuals... box at the top of the page. Type in image-width to find information about that function. When the DrRacket Helpdesk provides the matches for image-width, choose the one from "2htdp/image".
+
+Develop a function called four-square that consumes an image and produces an image that consists of 4 copies of the original image, as shown in this example:
+
+if the original image looks like this: lambda
+
+then the produced image should look like this: 4-lambdas
+
+Use the DrRacket help desk to learn about the following functions (available in the 2htdp/image library) that you might consider using for this problem:
+
+flip-vertical
+flip-horizontal
+beside
+above
+(You're not restricted to using these functions. You may solve the problem any way you want as long as the image is duplicated in the same manner as the image in the illustration.)
+Copy two images into your program. Google images is a good repository for images. Use square-shaped images when you try out your program. To copy an image, right-click on the image, select Copy, then in the DrRacket Definitions window, select Paste. You should use define to name any images you copy into your program. Make sure your four-square function works properly with each image, by invoking the function from the Interactions window.
+
+Note: Don't forget to provide a signature and purpose for your function. You do not have to test this problem with check-expect.
+
+A furniture store in Worcester charges a delivery fee of $80 (the fee is $80 regardless of the number of pieces of furniture delivered). Furniture is taxed at the Massachusetts sales tax rate of 6.25%.
+(a) develop a function that consumes the cost of the goods to be taxed, and produces the cost of the goods after the sales tax has been applied. Name your function cost-after-taxes. You don't have to worry about rounding amounts to the nearest cent; if the function produces a value of 12.348, e.g., that's OK.
+(b) develop a function that consumes the cost of the furniture, and produces the total cost to the purchaser, including the delivery fee and taxes. Assume that taxes are not charged on the delivery fee, but only on the value of the furniture purchased. Name your function cost-with-delivery. You should use the function you developed in part (a).
+(c) develop a function that consumes the cost of the furniture, and produces the total cost to the purchaser, including the delivery fee and taxes. This time, assume that taxes are charged on both the value of the goods purchased and the delivery charge. Name your function cost-with-tax-delivery. Again, you should use the function you developed in part (a).
+Use defined constants where appropriate. Make sure each function you define is documented with a signature and a purpose. Each function should be tested using check-expect. NOTE: You must name each function with the exact name specified in the problem. Your signature must conform to the problem description. Otherwise, we won't be able to run our automated tester on your program, and you'll lose points. Programs that don't work with our auto-tester (and thus must be tested manually) will be penalized with a deduction of 10% of the total number of points for the assignment.
+
+Grading
+Here is the grading rubric the graders will use for Homework 0.
+What to Turn In
+Using InstructAssist, choose Tools -> File Submission to turn in the file (with the .rkt extension) containing your Definitions Window content. The name of the project in InstructAssist is Homework 0. Your name and your wpi ccc username (and those of your partner) must be listed in a comment at the beginning of your file. If you are working with a partner, only one of you should submit to InstructAssist. Programs submitted after 5pm on Wednesday, August 30 will be considered late. No submissions will be accepted after 5pm on Thursday, August 31.
+
+If you submit a program that doesn't run under DrRacket, the grader will notify you by email and give you 24 hours to resubmit. The re-submission will be penalized with a deduction of 25% of the total number of points for the assignment.
+
