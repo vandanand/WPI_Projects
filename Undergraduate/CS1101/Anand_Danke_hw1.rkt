@@ -4,7 +4,7 @@
 ;;Vandana Anand and Manasi Danke
 ;;vanand and mmdanke
 
-;;Problem 1
+;;Problem 1 
 
 (define-struct film (title genre running-time opening-date total-receipts))
 ;;a Film is a (make-struct String String Natural Date Natural)
