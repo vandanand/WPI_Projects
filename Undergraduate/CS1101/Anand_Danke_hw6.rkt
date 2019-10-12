@@ -4,7 +4,7 @@
 ;; a TimeOfDay is one of
 ;;   "daytime"
 ;;   "primetime"
-;;   "off-hour"
+;;   "off-hour" 
 
 
 (define-struct ad (name duration production-cost national? time-of-day repetitions))
