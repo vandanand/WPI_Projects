@@ -1,172 +1,615 @@
- Paul Zimmer - Zimmer Design Services
- Michael Zimmer - Zimmer Design Services and UCSB
- Brian Zimmer - Zimmer Design Services and UCD
+PA3 vanand, fsikram
+2/6/17
 
-Readme for versions:
- v11.09.25 of fizzim.jar
- v5.20 of fizzim.pl
+****SUMMARY****
+Our project takes an arbitrary amount of input files, scans them,and counts the number of occurrences of each word in those files. After all input files are scanned, the program prints out a sorted list of the words in another file along with the number of occurrences of each word. As a way to organize our program, we are using a binary search tree.
+The program is split into 3 distinct modules:
+main.c : runs the main component of the function
+tree.c: maintains binary tree order
+string.c: works with certain string functions
 
-New features / bug fixes:
- 2.0:
- (GUI unchanged)
- fizzim.pl:
-   -  Added support for whitespace in .fzm file
-   -  Changed both regdp and comb block output structures to use a default
-      value ahead of the case statement, then only output values that don't
-      match the default.  If no default is supplied, fizzim.pl issues a
-      warning and uses 0.  This improves out-of-the-box synthesis results.
-   -  Official support of -terse mode.  Added alias of -sunburst to -terse.
-   -  Changed case (1) in regdp output to use 1'b1 and parallel_case full_case
-      just like nextstate comb block.  This improves out-of-the-box synthesis 
-      results for onehot.
-   -  Added onehot_pragma attribute to allow override of parallel_case
-      full_case.
-
- 3.0
- (GUI unchanged)
- fizzim.pl:
-   -  Added SystemVerilog output format
-   -  Changed verilog+onehot+default_state_is_x to work like sv+onehot
-   -  Changed handling of constants.  Numbers are now assumed to be decimal.  Binary numbers must now have 'b on them (except single-bit values since these are the same in binary and decimal).
-
- 3.1
- Gui:
-   -  Changed to store the size info in the .fzm file so that it restores to
-      the previous size.
-   -  Mantis items 24-30 fixed.
- fizzim.pl:
-   -  Changed to allow "fizzim.pl <file.fzm>" as well as input from stdin
-   -  Made -addversion default on
- 
-  3.6
-  Gui:
-   -  Fixed bug involving changing the name of the reset state after the
-      reset attributes were created.
-   -  File > open now starts in cwd, instead of home directory.
-   -  Added default state bubble size to preferences.
-   -  Page setup changes now saved in the .fzm file.
-   -  Misc small bug fixes (see Mantis).
-  fizzim.pl
-   -  Fixed (harmless) bug where XXX param/enum was added when it wasn't used.
-   -  Fixed bug where "$" in insert... code was being swallowed.
-   -  Added enhancement to make indentation work better on insert... code.
-   -  Added support for parameters.
-   -  Added code to suppress [0:0] on 1-bit reg/wire
-   -  Made implied_loopback the default
-   -  Added -minversion
-
-  3.6a
-  Gui:
-    - fixed issue with one-button mouse Mac's
-  fizzim.pl
-  (same as 3.6)
-
-  3.71 
-  Gui (v11.03.08):
-    Added flags, UserAtts, ResetVal
-  fizzim.pl
-    - Added undefined_states_go_here
-    - Added flags
-    - Added suppress_portlist
-    - Changed regd to use resetval if set
-    
-  4.0  
-  Gui (v11.08.22):
-    Fixed bug that gives incorrect message about resetvalue
-  fizzim.pl
-    - Changed heros state assignment algorithm to speed it up.
-    - Add -minbits and -iterations to control state assignment algorithm
-    - Added warning code for missing include file
-    - Added &verbose subroutine
-
-  4.01
-  Gui (v11.08.29)
-    Added support for newline in transition equations
-    Fixed implementation of newline support in free text
-  fizzim.pl
-    Added support for newline in transition equations
-    
-  4.41
-  Gui (v11.09.25)
-    Just changed help pointer for tutorial
-  fizzim.pl
-    Fixed bug with mealy handling when fsm input with newer versions of gui
-    
-  4.42
-  Gui (v11.09.25)
-    No changes
-  fizzim.pl
-    Added warning T20 to warn when too many reg bits are requested.
-  pdf generated out of word so that TOC links will work
-    
-  4.44
-  Gui (v11.09.25)
-    No changes
-  fizzim.pl
-    Fixed bug in onehot datapath output (full_case used while suppressing cases)
-    Fixed undesired spaces on blank lines
-    
-  5.0 
-  Gui (v14.02.26)
-    type reg displays at "statebit"
-    file open, etc defaults to cwd or most recently used directory
-  fizzim.pl
-    vhdl output added
-    
-  5.1
-  Gui (v14.02.26)
-    No changes
-  fizzim.pl
-    Change regexp handling to make script compatible with perl version v5.22.0 and above
-    Fixed -minversion bug introduced in version 4.44 by changes to RCS 
-    Added user-submitted fix that allows parameters to be used in a flag definition.
-
-  5.2
-  Gui (v14.02.26)
-    No changes
-  fizzim.pl
-    Changed vhdl output to remove clk and reset signals from sens list of COMB process
-    Fixed bug with "," at end of a comment
-    Added -insert_messages switch
-    Added feature to allow suffixes on all insert_* attributes to make it easier to do multiline comments
+****RUNNING THE PROGRAM****
+In order to run the program, first we have to compile it. Once in the proper directory,use make to build the program. Then enter the the following in the command line:
+./main.c nameOfOutputFile nameOfInputFile1 nameOfInputFile2…..nameOfInputFileN...
+There must be more than or equal to 3 files in order for the program not to give you an error.
+You will also get an error if your file is NULL.  In the make files we have the gcc  $(CFLAGS) -c tree/main/string.c to compile our program, and look for any changes made in the program. We have provided a few input files that  can be used for testing purposes. Speech.txt and newsArticle.txt can be found in our zip file. The output is below.
 
 
-Contents:
-fizzim.jar - the java gui
-fizzim.pl - the backend perl script
-fizzim_tutorial_*.pdf - tutorial
-examples - directory of example files (referenced in tutorial)
+****PROBLEMS WE HAD****
+We encountered a few problems along the way such as starting the string
+manipulation function and how to incorporate that into the binary tree.
+We also were confused on the memory allocation function but got that
+clarified by the professor.
 
-Running the gui:
-Fizzim is written in Java and runs under the Java Runtime Environment.  This
-is installed on most systems.  On PC, just double-clicking the .jar file will
-usually be enough to start the app.  If that doesn't work, you can start it from
-the command line like this:
+****ALGORITHM****
+Vandana Anand and Fareya Ikram worked together on this project. The algorithm for this is the binary tree containing the left and right node which determines where to put the string found in the input file, and function for finding/removing punctuation, isolating a word and detecting white space, and putting the whole binary tree in an output file. 
 
-java -jar fizzim.jar
+****LOOP INVARIANT****
+loop invariant: i is the argument in the command line
+loop invariant: i is the string length and function converts word to lowercase
 
-Java version 1.5 ("Java 5") or greater is required to run fizzim.  If you only
-have Java 1.4, there is a eval version of fizzim.jar for 1.4 on fizzim.com.
-But this is intended for evals only.  Don't bother to submit bugs on it -
-they won't be fixed.  Upgrade to 1.5 or greater.
+****OUTPUT FOR TEST CASES****
+For Speech.txt:
+Word Count:  
+ 	1 | 2017
+ 	1 | 20th
+ 	7 | a
+ 	3 | across
+ 	1 | administration
+ 	1 | again
+ 	1 | aid
+ 	6 | all
+ 	1 | allegiance
+ 	4 | america
+ 	1 | american
+ 	3 | americans
+ 	3 | an
+          25 | and
+ 	2 | another
+          12 | applause
+ 	7 | are
+ 	1 | as
+ 	1 | at
+ 	1 | ave
+ 	1 | ay
+ 	1 | back
+ 	3 | be
+ 	1 | beautiful
+ 	1 | became
+ 	2 | because
+ 	1 | become
+ 	3 | been
+ 	1 | before
+ 	2 | belongs
+ 	1 | borne
+ 	1 | bush
+ 	8 | but
+ 	2 | by
+ 	2 | c
+ 	1 | came
+ 	2 | capital
+ 	1 | carnage
+ 	1 | carry
+ 	1 | carter
+ 	1 | cash
+ 	1 | celebrate
+ 	1 | celebrated
+ 	1 | celebration
+ 	1 | center
+ 	1 | ceremony
+ 	1 | cess
+ 	1 | challenges
+ 	1 | changes
+ 	1 | chief
+ 	2 | children
+ 	1 | cities
+ 	4 | citizens
+ 	1 | clinton
+ 	1 | closed
+ 	1 | co
+ 	1 | come
+ 	1 | confront
+ 	1 | contro
+ 	1 | controls
+ 	1 | conviction
+ 	1 | cost
+ 	4 | country
+ 	1 | course
+ 	1 | crime
+ 	1 | crucial
+ 	3 | d
+ 	1 | day
+ 	1 | demands
+ 	1 | depr
+ 	1 | destiny
+ 	1 | determine
+ 	1 | did
+ 	1 | different
+ 	1 | done
+ 	2 | dreams
+ 	1 | drugs
+ 	1 | e
+ 	1 | education
+ 	1 | effort
+ 	1 | ement
+ 	1 | establishment
+ 	1 | every
+ 	3 | everyone
+ 	2 | exists
+ 	1 | face
+ 	2 | factories
+ 	2 | families
+ 	1 | fellow
+ 	1 | first
+ 	1 | flourished
+ 	1 | flush
+ 	9 | for
+ 	2 | forgotten
+ 	1 | four
+ 	3 | from
+ 	1 | gangs
+ 	1 | gather
+ 	1 | gathered
+ 	1 | get
+ 	1 | giving
+ 	1 | glorious
+ 	1 | good
+ 	3 | government
+ 	1 | gracious
+ 	1 | grateful
+ 	2 | great
+ 	1 | group
+ 	1 | h
+ 	1 | hardships
+ 	3 | has
+ 	4 | have
+ 	1 | heart
+ 	3 | here
+ 	1 | historic
+ 	1 | home
+ 	1 | hout
+ 	1 | however
+ 	1 | i
+ 	6 | in
+ 	1 | inner
+	10 | is
+ 	3 | it
+ 	3 | its
+ 	1 | itself
+ 	1 | ived
+ 	1 | j
+ 	1 | january
+ 	1 | job
+ 	1 | jobs
+ 	1 | joined
+ 	1 | just
+ 	1 | justice
+ 	1 | knowledge
+ 	1 | lady
+ 	1 | land
+ 	1 | landscape
+ 	1 | leaves
+ 	1 | left
+ 	1 | like
+ 	1 | likes
+ 	1 | listening
+ 	1 | little
+ 	1 | lives
+ 	1 | ll
+ 	1 | lled
+ 	1 | long
+ 	1 | longer
+ 	1 | magnificent
+ 	4 | many
+ 	1 | matters
+ 	1 | meaning
+ 	1 | men
+ 	1 | merely
+ 	1 | michelle
+ 	1 | millions
+ 	2 | moment
+ 	1 | mothers
+ 	1 | mov
+ 	1 | movement
+ 	1 | much
+ 	4 | nation
+ 	2 | nation's
+ 	1 | national
+ 	1 | neighborhoods
+ 	1 | never
+ 	1 | no
+ 	6 | not
+ 	4 | now
+ 	1 | o
+ 	2 | oath
+ 	3 | obama
+ 	1 | obs
+          21 | of
+ 	1 | offic
+ 	1 | on
+ 	6 | one
+ 	1 | or
+ 	1 | orderly
+          17 | our
+ 	2 | out
+ 	1 | ower
+ 	1 | p
+ 	2 | pain
+ 	1 | part
+ 	2 | party
+ 	1 | peaceful
+ 	8 | people
+ 	1 | poli
+ 	1 | potential
+ 	1 | pover
+ 	2 | power
+ 	5 | president
+ 	1 | promise
+ 	1 | prospered
+ 	1 | protected
+ 	1 | publi
+ 	1 | reality
+ 	1 | reaped
+ 	1 | reasonable
+ 	1 | rebuild
+ 	1 | remembered
+ 	1 | restore
+ 	1 | rewards
+ 	4 | right
+ 	2 | righteous
+ 	1 | robbed
+ 	1 | roberts
+ 	1 | rulers
+ 	1 | rusted
+ 	1 | safe
+ 	1 | scattered
+ 	1 | schools
+ 	1 | seen
+ 	1 | serve
+ 	2 | share
+ 	1 | small
+ 	1 | so
+ 	1 | special
+ 	1 | starting
+ 	1 | states
+ 	1 | steps
+ 	1 | stolen
+ 	2 | stops
+ 	1 | struggling
+ 	1 | students
+ 	1 | suc
+ 	1 | success
+ 	1 | system
+ 	1 | t
+ 	1 | take
+ 	1 | tens
+ 	2 | thank
+ 	3 | that
+          30 | the
+ 	8 | their
+ 	1 | themselves
+ 	1 | there
+ 	2 | these
+ 	2 | they
+ 	8 | this
+ 	1 | throug
+ 	1 | ticians
+          13 | to
+ 	3 | today
+ 	1 | today's
+ 	1 | together
+ 	1 | tombstones
+ 	3 | too
+ 	1 | transfer
+ 	2 | transferring
+ 	1 | transition
+ 	1 | trapped
+ 	2 | triumphs
+ 	1 | truly
+ 	1 | trump
+ 	1 | ty
+ 	1 | united
+ 	1 | unrealized
+ 	1 | untry
+ 	1 | very
+ 	2 | victories
+ 	1 | want
+ 	1 | was
+ 	2 | washington
+ 	1 | watching
+          11 | we
+ 	1 | wealth
+ 	1 | what
+ 	1 | whether
+ 	3 | which
+ 	2 | while
+ 	1 | wi
+ 	6 | will
+ 	1 | with
+ 	1 | women
+ 	3 | world
+ 	2 | years
+ 	6 | you
+ 	1 | young
+ 	6 | your
+-------------
+Total Words (including duplicates)= 593
+Total Distinct Words= 281
 
-Running the backend:
-The backend is written in perl.  This is loaded on all unix systems.
-You can download it for your PC from perl.org.
+newsArticle.txt:
+Word Count:  
+ 	1 | 1
+ 	1 | 110
+ 	1 | 14
+ 	1 | 17
+ 	3 | 2
+ 	1 | 2017
+ 	1 | 23
+ 	1 | 25
+ 	1 | 28
+ 	1 | 284
+ 	1 | 3
+ 	1 | 43
+ 	1 | 466
+ 	2 | 49ers
+ 	1 | 5
+ 	1 | 5th
+ 	1 | 6
+ 	1 | 62
+ 	1 | 75
+ 	1 | 8
+ 	1 | 82
+          12 | a
+ 	1 | after
+ 	1 | alford
+ 	1 | all
+ 	1 | alone
+ 	1 | along
+ 	1 | among
+ 	2 | an
+          11 | and
+ 	1 | apart
+ 	6 | as
+ 	2 | at
+ 	2 | atlanta’s
+ 	1 | attempts
+ 	1 | away
+ 	1 | back
+ 	2 | ball
+ 	1 | bart
+ 	1 | bay
+ 	1 | been
+ 	1 | blowout
+ 	1 | bo
+ 	1 | both
+ 	6 | bowl
+ 	2 | bowls
+ 	1 | bradshaw
+ 	4 | brady
+ 	1 | brady’s
+ 	3 | but
+ 	3 | by
+ 	2 | career
+ 	2 | catch
+ 	1 | catches
+ 	1 | catching
+ 	1 | championships
+ 	1 | charles
+ 	1 | check
+ 	1 | chipped
+ 	1 | circus
+ 	1 | claims
+ 	1 | coleman
+ 	2 | completing
+ 	1 | consecut
+ 	1 | considered
+ 	1 | cowboys
+ 	1 | d
+ 	1 | dallas
+ 	1 | david
+ 	1 | day
+ 	2 | deal
+ 	1 | decorated
+ 	1 | defeat
+ 	1 | defense
+ 	1 | defensive
+ 	1 | despite
+ 	1 | done
+ 	1 | down
+ 	1 | drives
+ 	1 | e
+ 	1 | each
+ 	1 | early
+ 	1 | edelman
+ 	1 | ee
+ 	1 | ee’s
+ 	1 | end
+ 	2 | ended
+ 	1 | ends
+ 	1 | endured
+ 	1 | enduring
+ 	2 | england
+ 	1 | entless
+ 	2 | era
+ 	1 | erase
+ 	1 | even
+ 	1 | everything
+ 	1 | experience
+ 	2 | f
+ 	3 | falcons
+ 	1 | falcons
 
-On unix systems, the "sh-bang" at the start of the file will tell the shell to
-run perl, so you can just execute the script:
-
-fizzim.pl < your_fsm.fzm
-
-On PC's, your shell might not recognize sh-bang, so you may have to use this:
-
-perl -S fizzim.pl < your_fsm.fzm
-
-Bugs:
-To report bugs, go to fizzim.com and follow the "bug tracking" link.
-
-Submitting modifications:
-Please send proposed code modifications to:
-contributions@fizzim.com
-
+ 	1 | famer
+ 	1 | fan
+ 	1 | favor
+ 	1 | fell
+ 	1 | field
+ 	4 | first
+ 	1 | five
+ 	1 | flawless
+          11 | for
+ 	1 | forwa
+ 	1 | found
+ 	3 | four
+ 	1 | francisco
+ 	2 | from
+ 	1 | fumble
+ 	1 | ga
+ 	2 | game
+ 	1 | getting
+ 	1 | go
+ 	1 | going
+ 	2 | got
+ 	1 | grady
+ 	2 | great
+ 	1 | green
+ 	1 | grown
+ 	6 | had
+ 	1 | haley
+ 	1 | hall
+ 	2 | have
+ 	3 | having
+ 	2 | he
+ 	1 | held
+ 	1 | helmet
+ 	3 | help
+ 	2 | him
+ 	5 | his
+ 	1 | history
+ 	1 | ho
+ 	1 | holding
+ 	1 | ibility
+ 	1 | idol
+ 	1 | ies
+ 	1 | improved
+          11 | in
+ 	1 | interception
+ 	1 | is
+ 	1 | it
+ 	1 | ive
+ 	1 | james
+ 	1 | jarrett
+ 	1 | joe
+ 	1 | joining
+ 	1 | journey
+ 	1 | julian
+ 	1 | l
+ 	1 | le
+ 	2 | lead
+ 	1 | leader
+ 	1 | led
+ 	1 | let
+ 	1 | like
+ 	2 | looked
+ 	1 | losses
+ 	1 | makes
+ 	1 | many
+ 	1 | marched
+ 	1 | matt
+ 	1 | me
+ 	1 | memory
+ 	2 | montana
+ 	3 | most
+ 	1 | much
+ 	1 | n
+ 	1 | nd
+ 	1 | nearly
+ 	1 | never
+ 	2 | new
+ 	1 | ngly
+ 	1 | not
+ 	1 | now
+ 	1 | o
+          17 | of
+ 	1 | off
+ 	3 | on
+ 	1 | once
+ 	1 | or
+ 	1 | out
+ 	1 | over
+ 	2 | overtime
+ 	1 | packers
+ 	1 | painful
+ 	2 | pass
+ 	2 | passes
+ 	1 | passing
+ 	3 | patriots
+ 	1 | patriots’
+ 	1 | period
+ 	1 | pick
+ 	1 | pittsburgh
+ 	1 | playe
+ 	1 | plays
+ 	2 | plenty
+ 	1 | point
+ 	1 | points
+ 	1 | positives
+ 	1 | poss
+ 	1 | postseason
+ 	1 | pressure
+ 	2 | prior
+ 	3 | punt
+ 	1 | quarter
+ 	1 | quarterback
+ 	1 | quarterbacks
+ 	1 | quarters
+ 	1 | quite
+ 	2 | r
+ 	1 | racing
+ 	1 | ran
+ 	1 | rd
+ 	1 | record
+ 	1 | reeled
+ 	1 | rel
+ 	1 | repeatedly
+ 	1 | returning
+ 	1 | robert
+ 	2 | run
+ 	1 | running
+ 	2 | ryan
+ 	2 | sacks
+ 	1 | san
+ 	1 | scoring
+ 	1 | season
+ 	1 | seemi
+ 	1 | simply
+ 	1 | six
+ 	1 | so
+ 	1 | stands
+ 	2 | starr
+ 	1 | steadily
+ 	1 | steam
+ 	1 | sunk
+ 	9 | super
+ 	1 | t
+ 	1 | team
+ 	1 | terry
+ 	1 | tevin
+ 	1 | th
+ 	3 | that
+          33 | the
+ 	1 | then
+ 	1 | there
+ 	2 | they
+ 	1 | third
+ 	1 | thr
+ 	2 | three
+ 	1 | thriller
+ 	1 | throwing
+ 	1 | tied
+ 	1 | tight
+ 	1 | times
+ 	1 | title
+ 	1 | titles
+ 	5 | to
+ 	4 | touchdown
+ 	2 | touchdowns
+ 	2 | two
+ 	1 | tying
+ 	1 | tyr
+ 	1 | unquestioned
+ 	1 | unstoppable
+ 	2 | up
+ 	1 | ut
+ 	1 | w
+ 	1 | was
+ 	1 | were
+ 	1 | whi
+ 	1 | while
+ 	1 | white
+ 	1 | white’s
+ 	2 | who
+ 	2 | will
+ 	2 | win
+ 	4 | winning
+ 	3 | wins
+          11 | with
+ 	1 | wl
+ 	1 | won
+ 	1 | xlii
+ 	1 | yan
+ 	2 | yard
+ 	5 | yards
+-------------
+Total Words (including duplicates)= 508
+Total Distinct Words= 292
