@@ -1,7 +1,7 @@
 ;;Vandana Anand and Manasi Danke
 ;;vanand and mmdanke 
 
-;;Problem 1
+;;Problem 1 
 
 (define-struct river (name pH DO tributaries))
 ;; a River is a (make-river String Number Number ListOfRiver)
