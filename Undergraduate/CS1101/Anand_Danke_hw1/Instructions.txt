@@ -1,1 +1,38 @@
 
+CS 1101 - A-term 17
+Homework 1 - Structs
+Due: Wednesday, Sept 6 at 5pm
+Read the expectations on homework.
+
+Assignment Goals
+To make sure you can define structs
+To make sure you can write functions using conditions, structs, and nested structs
+To make sure you can develop a set of test cases for a function
+Reminders
+Your solutions to the following problems should use helper functions in place of repeated code or to improve the readability of your code.
+Remember to include a signature, purpose, and test cases for every function you write, including helpers.
+Make sure you read each problem carefully and create a signature that conforms to the problem description. You must name each function with the exact name specified in the problem. Your signature must conform to the problem description. Otherwise, we won't be able to run our automated tester on your program, and you'll lose points. Programs that don't work with our auto-tester (and thus must be tested manually) will be penalized with a deduction of 10% of the total number of points for the assignment.
+Each test case you develop should be annotated with a brief comment that describes the situation being tested.
+
+The Assignment
+The website for a movie theater contains information about each of the films currently being shown in the theater. The following information is stored for a film:
+the title of the film (a String)
+the film's genre (drama, comedy, family, etc.) (a String)
+the running time of the film, in minutes (a Natural)
+the date the film opened at the theater (it should include the year, month, and day) (a Date)
+the total box office receipts collected so far for the film (in millions of dollars) (a Natural)
+
+Problems
+1. Provide data definitions for both a Film and a Date. The name of the struct for a Film should be film, and the name of the struct for a Date should be date. Failure to define the structs with these names will cause our auto-tester to fail, and you will lose points. Include both the define-structs and at least three examples for each data definition. When creating a struct, the order of the fields in the constructor should match the order given in the descriptions above. The names of the fields in the struct don't matter, but the order does. For example, the fields of the struct for a film should be the title, genre, running time, opening date, and receipts collected, in that order. Failure to define the fields in the given order will cause our auto-tester to fail, and you will lose points. Your struct for a date should have 3 fields, one for the year, one for the month, and one for the day, in that order. Each field in a date is of type Natural.
+2. In a comment in the Defintions Window, provide the signatures of all the operators that are created by Racket for your Film struct. Give the signatures only (not the purposes).
+3. You're going on a first date. You want to suggest to your partner a movie that's funny and that doesn't last too long. Write a function short-comedy? which consumes a Film and some number of minutes. The function returns true if the film is a comedy that runs for less than the given number of minutes; otherwise, the function returns false.
+4. Write a function film-with-more-receipts. The function consumes two Films and produces a Film. The film produced is the one with the higher number of box-office receipts. If both films have the same number of receipts, the function may return either one.
+5. Customers have been suggesting that the running time for a film should include the time for any trailers that are shown before the main feature begins. Write a function add-time-for-trailers which consumes a Film and a number of trailers, and produces a Film. The film that is produced is the same as the original except that the film's running time has been increased by 3 minutes for each trailer that is shown prior to the film.
+6. Write a function opens-before?, which consumes a Film and a Date, and produces a Boolean. The function produces true if the given film opens before the given date, and returns false otherwise.
+
+Grading
+Here is the grading rubric that the graders will use for Homework 1.
+What to Turn In
+Submit your .rkt file to InstructAssist. The name of the project in IntructAssist is Homework 1. Follow the naming conventions for homework files. BOTH partners' names and wpi usernames MUST be listed in a comment at the beginning of your file (you will lose points if these rules are not followed). Programs are due at 5pm on Wednesday, September 6. Late programs will be accepted until 5pm on Thursday, September 7. Programs will not be accepted for submission after 5pm on Thursday, September 7. No exceptions.
+
+If you submit a program that doesn't run under DrRacket, the grader will notify you by email and give you 24 hours to resubmit. The re-submission will be penalized with a deduction of 25% of the total number of points for the assignment.
