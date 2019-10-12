@@ -1,0 +1,508 @@
+Test 1: ./bathroomSim 5 6 2 8
+Output:
+
+Begin bathroom simulation with 5 threads:
+
+Print out the Statistics: 
+Thread ID: 3
+ Gender: female
+ Loops: 6
+ Minimum: 0
+ Maximum: 423
+ Average: 185
+
+Thread ID: 0
+ Gender: female
+ Loops: 6
+ Minimum: 0
+ Maximum: 447
+ Average: 124
+
+Thread ID: 4
+ Gender: female
+ Loops: 8
+ Minimum: 0
+ Maximum: 883
+ Average: 459
+
+Thread ID: 1
+ Gender: male
+ Loops: 7
+ Minimum: 0
+ Maximum: 3971
+ Average: 1957
+
+Thread ID: 2
+ Gender: female
+ Loops: 11
+ Minimum: 0
+ Maximum: 910
+ Average: 693
+
+There was a maximum of: 
+ 1 men 
+ 4 women
+ The total number of people who entered the bathroom is:
+ 49 men 
+ 257 women 
+ The average # of people waiting for the bathroom is 1
+
+End of bathroom simulation!
+
+
+
+Test 2: ./bathroomSim 20 360 10 30
+Output:
+
+Begin bathroom simulation with 20 threads:
+
+Print out the Statistics: 
+Thread ID: 10
+ Gender: male
+ Loops: 375
+ Minimum: 0
+ Maximum: 101908
+ Average: 5032
+
+Thread ID: 17
+ Gender: male
+ Loops: 384
+ Minimum: 0
+ Maximum: 101884
+ Average: 5162
+
+Thread ID: 11
+ Gender: male
+ Loops: 392
+ Minimum: 0
+ Maximum: 101870
+ Average: 5712
+
+Thread ID: 5
+ Gender: male
+ Loops: 397
+ Minimum: 0
+ Maximum: 101877
+ Average: 6387
+
+Thread ID: 14
+ Gender: male
+ Loops: 410
+ Minimum: 0
+ Maximum: 101859
+ Average: 9162
+
+Thread ID: 3
+ Gender: male
+ Loops: 416
+ Minimum: 0
+ Maximum: 101901
+ Average: 10817
+
+Thread ID: 1
+ Gender: male
+ Loops: 467
+ Minimum: 0
+ Maximum: 112307
+ Average: 25679
+
+Thread ID: 0
+ Gender: female
+ Loops: 360
+ Minimum: 0
+ Maximum: 1931448
+ Average: 80649
+
+Thread ID: 13
+ Gender: female
+ Loops: 378
+ Minimum: 0
+ Maximum: 1931434
+ Average: 79334
+
+Thread ID: 12
+ Gender: male
+ Loops: 511
+ Minimum: 0
+ Maximum: 112311
+ Average: 35647
+
+Thread ID: 4
+ Gender: male
+ Loops: 524
+ Minimum: 0
+ Maximum: 112315
+ Average: 38091
+
+Thread ID: 7
+ Gender: male
+ Loops: 545
+ Minimum: 0
+ Maximum: 112353
+ Average: 42262
+
+Thread ID: 18
+ Gender: female
+ Loops: 460
+ Minimum: 0
+ Maximum: 1931489
+ Average: 74701
+
+Thread ID: 9
+ Gender: female
+ Loops: 510
+ Minimum: 0
+ Maximum: 1931439
+ Average: 70811
+
+Thread ID: 8
+ Gender: male
+ Loops: 585
+ Minimum: 0
+ Maximum: 112318
+ Average: 47286
+
+Thread ID: 16
+ Gender: male
+ Loops: 596
+ Minimum: 0
+ Maximum: 112302
+ Average: 47935
+
+Thread ID: 15
+ Gender: female
+ Loops: 551
+ Minimum: 0
+ Maximum: 1931430
+ Average: 66958
+
+Thread ID: 19
+ Gender: female
+ Loops: 578
+ Minimum: 0
+ Maximum: 1931393
+ Average: 63996
+
+Thread ID: 6
+ Gender: female
+ Loops: 633
+ Minimum: 0
+ Maximum: 1931443
+ Average: 58753
+
+Thread ID: 2
+ Gender: female
+ Loops: 705
+ Minimum: 0
+ Maximum: 1931452
+ Average: 53243
+
+There was a maximum of: 
+ 12 men 
+ 8 women
+ The total number of people who entered the bathroom is:
+ 2688762 men 
+ 2279583 women 
+ The average # of people waiting for the bathroom is 4
+
+End of bathroom simulation!
+
+
+
+Test 3: ./bathroomSim 40 5 25 43
+Ouput:
+
+Begin bathroom simulation with 40 threads:
+
+Print out the Statistics: 
+Thread ID: 5
+ Gender: male
+ Loops: 5
+ Minimum: 3
+ Maximum: 5
+ Average: 17
+
+Thread ID: 14
+ Gender: male
+ Loops: 5
+ Minimum: 3
+ Maximum: 14
+ Average: 19
+
+Thread ID: 13
+ Gender: male
+ Loops: 5
+ Minimum: 0
+ Maximum: 5
+ Average: 17
+
+Thread ID: 17
+ Gender: male
+ Loops: 5
+ Minimum: 3
+ Maximum: 16
+ Average: 18
+
+Thread ID: 25
+ Gender: male
+ Loops: 5
+ Minimum: 3
+ Maximum: 7
+ Average: 16
+
+Thread ID: 21
+ Gender: male
+ Loops: 5
+ Minimum: 0
+ Maximum: 30
+ Average: 20
+
+Thread ID: 3
+ Gender: male
+ Loops: 5
+ Minimum: 1
+ Maximum: 11
+ Average: 17
+
+Thread ID: 34
+ Gender: male
+ Loops: 5
+ Minimum: 0
+ Maximum: 21
+ Average: 17
+
+Thread ID: 38
+ Gender: male
+ Loops: 5
+ Minimum: 0
+ Maximum: 23
+ Average: 17
+
+Thread ID: 39
+ Gender: male
+ Loops: 5
+ Minimum: 0
+ Maximum: 34
+ Average: 20
+
+Thread ID: 18
+ Gender: male
+ Loops: 6
+ Minimum: 0
+ Maximum: 39
+ Average: 28
+
+Thread ID: 29
+ Gender: male
+ Loops: 6
+ Minimum: 0
+ Maximum: 9
+ Average: 19
+
+Thread ID: 28
+ Gender: male
+ Loops: 6
+ Minimum: 0
+ Maximum: 65
+ Average: 33
+
+Thread ID: 37
+ Gender: male
+ Loops: 6
+ Minimum: 0
+ Maximum: 69
+ Average: 29
+
+Thread ID: 1
+ Gender: male
+ Loops: 6
+ Minimum: 0
+ Maximum: 68
+ Average: 37
+
+Thread ID: 35
+ Gender: male
+ Loops: 7
+ Minimum: 0
+ Maximum: 122
+ Average: 60
+
+Thread ID: 6
+ Gender: male
+ Loops: 8
+ Minimum: 0
+ Maximum: 77
+ Average: 51
+
+Thread ID: 26
+ Gender: male
+ Loops: 9
+ Minimum: 0
+ Maximum: 153
+ Average: 102
+
+Thread ID: 27
+ Gender: male
+ Loops: 9
+ Minimum: 0
+ Maximum: 353
+ Average: 141
+
+Thread ID: 31
+ Gender: male
+ Loops: 9
+ Minimum: 0
+ Maximum: 194
+ Average: 116
+
+Thread ID: 0
+ Gender: female
+ Loops: 5
+ Minimum: 0
+ Maximum: 27508
+ Average: 4787
+
+Thread ID: 10
+ Gender: female
+ Loops: 5
+ Minimum: 0
+ Maximum: 27605
+ Average: 4848
+
+Thread ID: 23
+ Gender: female
+ Loops: 5
+ Minimum: 3
+ Maximum: 27595
+ Average: 4844
+
+Thread ID: 11
+ Gender: female
+ Loops: 5
+ Minimum: 0
+ Maximum: 27609
+ Average: 4848
+
+Thread ID: 36
+ Gender: female
+ Loops: 5
+ Minimum: 0
+ Maximum: 27532
+ Average: 4825
+
+Thread ID: 24
+ Gender: female
+ Loops: 5
+ Minimum: 3
+ Maximum: 27599
+ Average: 4839
+
+Thread ID: 32
+ Gender: female
+ Loops: 5
+ Minimum: 0
+ Maximum: 27550
+ Average: 4828
+
+Thread ID: 9
+ Gender: female
+ Loops: 6
+ Minimum: 0
+ Maximum: 27599
+ Average: 4168
+
+Thread ID: 20
+ Gender: female
+ Loops: 6
+ Minimum: 0
+ Maximum: 27595
+ Average: 4149
+
+Thread ID: 12
+ Gender: female
+ Loops: 6
+ Minimum: 0
+ Maximum: 27604
+ Average: 4165
+
+Thread ID: 22
+ Gender: female
+ Loops: 6
+ Minimum: 0
+ Maximum: 27592
+ Average: 4151
+
+Thread ID: 4
+ Gender: female
+ Loops: 6
+ Minimum: 0
+ Maximum: 27586
+ Average: 4149
+
+Thread ID: 8
+ Gender: female
+ Loops: 7
+ Minimum: 0
+ Maximum: 27595
+ Average: 3648
+
+Thread ID: 7
+ Gender: female
+ Loops: 7
+ Minimum: 0
+ Maximum: 27593
+ Average: 3661
+
+Thread ID: 15
+ Gender: female
+ Loops: 7
+ Minimum: 0
+ Maximum: 27593
+ Average: 3641
+
+Thread ID: 19
+ Gender: female
+ Loops: 7
+ Minimum: 0
+ Maximum: 27590
+ Average: 3644
+
+Thread ID: 16
+ Gender: female
+ Loops: 7
+ Minimum: 0
+ Maximum: 27597
+ Average: 3642
+
+Thread ID: 30
+ Gender: female
+ Loops: 7
+ Minimum: 0
+ Maximum: 27555
+ Average: 3632
+
+Thread ID: 2
+ Gender: female
+ Loops: 8
+ Minimum: 0
+ Maximum: 27512
+ Average: 3360
+
+Thread ID: 33
+ Gender: male
+ Loops: 10
+ Minimum: 0
+ Maximum: 11091
+ Average: 1250
+
+There was a maximum of: 
+ 21 men 
+ 19 women
+ The total number of people who entered the bathroom is:
+ 886 men 
+ 713 women 
+ The average # of people waiting for the bathroom is 5
+
+End of bathroom simulation!
+
+
