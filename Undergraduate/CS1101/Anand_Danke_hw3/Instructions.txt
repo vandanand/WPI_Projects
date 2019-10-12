@@ -1,1 +1,45 @@
+CS 1101 - A-term 17
+Homework 3 - Lists of Structs
+Due: Tuesday, September 19 at 5pm
+Read the expectations on homework.
+
+Assignment Goals
+To make sure you can write programs over lists of structures.
+
+The Assignment
+If you watch TV, you're probably pretty sick of watching television ads. The typical 30-minute TV program consists of 22 minutes of programming and 8 minutes of commercials. In this assignment, you'll create data to represent information about television ads, and write programs that process lists of ads.
+
+(You'll do problems 1 and 2 during lab.)
+1. An Ad consists of the name of the product the ad is for, the duration of the ad (in seconds), the cost to produce the ad (in thousands of dollars), whether or not the ad is to be aired nationally (as opposed to locally), the time of day that the ad is to be aired (either daytime, primetime, or off-hour), and the number of times the ad is to be aired.
+
+Write a data definition for TimeOfDay. This should be an itemization that allows any of three strings: "daytime", "primetime", "off-hour".
+
+Write data definitions and provide examples of data for Ad and ListOfAd. The name of your struct should be ad. Make sure you define the fields in your struct in the order given above. You should use the data type Boolean to represent the field for national/local (use true to represent national, false to represent local).
+
+Ask a lab assistant to check over your data definitions and examples.
+
+2. Write the templates for Ad and ListOfAd.
+
+Ask a lab assistant to check over your templates.
+
+Make sure you name your functions exactly the same as the names given in the problems below. Otherwise, our auto-tester won't work, and ...well, you know the rest.
+
+3. Write a function count-long-primetime that consumes a list of ads and an amount of time (in seconds) and produces the number of primetime ads in the list that run longer than the given number of seconds.
+
+4. Write a function any-ads-in-timeslot? that consumes a list of ads and a TimeOfDay, and produces a Boolean. The function returns true if the list contains any ads that run in the given time of day.
+
+5. Write a function national-ads that consumes a list of ads and produces a list of all the ads airing nationally.
+
+6. Write a function late-night-products that consumes a list of ads and produces a list of strings. The list that is produced contains the names of the products that are advertised during the off-hours (it's OK if the resulting list contains duplicate names).
+
+7. Write a function air-cost that consumes an Ad and produces a Number. The number produced is the cost of airing the ad, which is determined as follows: airtime is sold in 30-second-spot blocks (so if the duration of the ad is 15 seconds, it would cost half the stated amount, etc.). The cost of a 30-second primetime ad for a national market is $100,000. The cost of a 30-second primetime ad for a local market is $5000. A discount of 20% is applied to the cost if the ad is aired in the daytime, and a discount of 50% is applied if the ad is aired during off-hours; the discounts apply to both national and local ads. Finally, the air-cost is multiplied by the number of times the ad is to be aired. (You may assume that all airings of an ad occur in the same market and at the same time of day.)
+
+8. Write a function total-ad-cost that consumes an Ad and produces the total cost of the ad. The total cost is the sum of the cost of producing the ad and the cost of airing the ad.
+
+9. Write a function expensive-ads that consumes a list of ads and a Number. The function produces a list of those ads for which the total ad cost exceeds the given number.
+
+What to Turn In
+Here is the grading sheet that the graders will be using for Homework 3.
+Submit your .rkt file to InstructAssist. Name your file according to the naming conventions for files. Make sure both partners' names and login names appear at the top of the file in a comment.
+
 
