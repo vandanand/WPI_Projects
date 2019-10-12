@@ -8,6 +8,7 @@ Assignment Goals
 To make sure you can define structs
 To make sure you can write functions using conditions, structs, and nested structs
 To make sure you can develop a set of test cases for a function
+
 Reminders
 Your solutions to the following problems should use helper functions in place of repeated code or to improve the readability of your code.
 Remember to include a signature, purpose, and test cases for every function you write, including helpers.
