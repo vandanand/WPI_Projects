@@ -1,7 +1,7 @@
 ;;Vandana Anand and Manasi Danke
 ;;vanand and mmdanke
 
-;;Problem 1
+;;Problem 1 
 
 (define-struct book (title author ISBN cover-type publisher pub-year num-copies))
 ;;a Book is a (make-book String String Natural Boolean String Natural Natural)
