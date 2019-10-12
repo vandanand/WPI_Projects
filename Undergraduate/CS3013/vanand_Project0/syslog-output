@@ -1,0 +1,201 @@
+Jan 15 17:45:10 CS-3013-VM org.gtk.vfs.Daemon[4739]: ** (gvfsd:4809): WARNING **: dbus_mount_reply: Error from org.gtk.vfs.Mountable.mount(): Failed to retrieve share list from server: Connection refused
+Jan 15 17:45:10 CS-3013-VM org.gtk.vfs.Daemon[4739]: ** (process:5302): WARNING **: Couldn't create directory monitor on smb://x-gnome-default-workgroup/. Error: The specified location is not mounted
+Jan 15 17:50:12 CS-3013-VM kernel: [ 6493.153596] kworker/dying (4303) used greatest stack depth: 13024 bytes left
+Jan 15 18:17:01 CS-3013-VM CRON[5445]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Jan 15 18:19:17 CS-3013-VM com.canonical.Unity.Scope.Applications[4739]: Error loading package indexes: Couldn't stat '/var/cache/software-center/xapian'
+Jan 15 18:19:17 CS-3013-VM com.canonical.Unity.Scope.Applications[4739]: (unity-scope-loader:5463): unity-applications-daemon-CRITICAL **: daemon.vala:144: Failed to load Software Center index. 'Apps Available for Download' will not be listed
+Jan 15 18:19:22 CS-3013-VM com.canonical.Unity.Scope.Music[4739]: (unity-music-daemon:5518): unity-music-daemon-WARNING **: rhythmbox-collection.vala:510: Unable to open album-art DB!
+Jan 15 18:19:22 CS-3013-VM com.canonical.Unity.Scope.Music[4739]: (unity-music-daemon:5518): unity-music-daemon-WARNING **: rhythmbox-collection.vala:574: Error while parsing rhythmbox DB: Error opening file: No such file or directory
+Jan 15 18:43:49 CS-3013-VM org.gnome.evolution.dataserver.Sources5[4739]: ** (evolution-source-registry:4966): WARNING **: secret_service_search_sync: must specify at least one attribute to match
+Jan 15 18:46:13 CS-3013-VM NetworkManager[1532]: <info>  [1516059973.8180] device (enp0s3): link disconnected (deferring action for 4 seconds)
+Jan 15 18:46:13 CS-3013-VM kernel: [ 9854.817501] e1000: enp0s3 NIC Link is Down
+Jan 15 18:46:15 CS-3013-VM kernel: [ 9856.865591] e1000: enp0s3 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+Jan 15 18:46:15 CS-3013-VM NetworkManager[1532]: <info>  [1516059975.8670] device (enp0s3): link connected
+Jan 15 18:46:15 CS-3013-VM NetworkManager[1532]: <info>  [1516059975.8675] device (enp0s3): DHCPv4 lease renewal requested
+Jan 15 18:46:15 CS-3013-VM NetworkManager[1532]: <info>  [1516059975.8684] dhcp4 (enp0s3): canceled DHCP transaction, DHCP client pid 4514
+Jan 15 18:46:15 CS-3013-VM NetworkManager[1532]: <info>  [1516059975.8684] dhcp4 (enp0s3): state changed bound -> done
+Jan 15 18:46:15 CS-3013-VM NetworkManager[1532]: <info>  [1516059975.8688] dhcp4 (enp0s3): activation: beginning transaction (timeout in 45 seconds)
+Jan 15 18:46:15 CS-3013-VM NetworkManager[1532]: <info>  [1516059975.8770] dhcp4 (enp0s3): dhclient started with pid 5707
+Jan 15 18:46:15 CS-3013-VM dhclient[5707]: DHCPREQUEST of 10.0.2.15 on enp0s3 to 255.255.255.255 port 67 (xid=0x73d8fb49)
+Jan 15 18:46:15 CS-3013-VM dhclient[5707]: DHCPACK of 10.0.2.15 from 10.0.2.2
+Jan 15 18:46:15 CS-3013-VM NetworkManager[1532]: <info>  [1516059975.9003]   address 10.0.2.15
+Jan 15 18:46:15 CS-3013-VM NetworkManager[1532]: <info>  [1516059975.9004]   plen 24 (255.255.255.0)
+Jan 15 18:46:15 CS-3013-VM NetworkManager[1532]: <info>  [1516059975.9004]   gateway 10.0.2.2
+Jan 15 18:46:15 CS-3013-VM NetworkManager[1532]: <info>  [1516059975.9004]   server identifier 10.0.2.2
+Jan 15 18:46:15 CS-3013-VM NetworkManager[1532]: <info>  [1516059975.9004]   lease time 86400
+Jan 15 18:46:15 CS-3013-VM NetworkManager[1532]: <info>  [1516059975.9004]   nameserver '192.168.1.1'
+Jan 15 18:46:15 CS-3013-VM NetworkManager[1532]: <info>  [1516059975.9004]   domain name 'fios-router.home'
+Jan 15 18:46:15 CS-3013-VM NetworkManager[1532]: <info>  [1516059975.9004] dhcp4 (enp0s3): state changed unknown -> bound
+Jan 15 18:46:15 CS-3013-VM NetworkManager[1532]: <info>  [1516059975.9012] dns-mgr: Writing DNS information to /sbin/resolvconf
+Jan 15 18:46:15 CS-3013-VM dnsmasq[1654]: setting upstream servers from DBus
+Jan 15 18:46:15 CS-3013-VM dnsmasq[1654]: using nameserver 192.168.1.1#53(via enp0s3)
+Jan 15 18:46:16 CS-3013-VM dbus[1483]: [system] Activating via systemd: service name='org.freedesktop.nm_dispatcher' unit='dbus-org.freedesktop.nm-dispatcher.service'
+Jan 15 18:46:16 CS-3013-VM systemd[1]: Starting Network Manager Script Dispatcher Service...
+Jan 15 18:46:16 CS-3013-VM dhclient[5707]: bound to 10.0.2.15 -- renewal in 39781 seconds.
+Jan 15 18:46:16 CS-3013-VM dbus[1483]: [system] Successfully activated service 'org.freedesktop.nm_dispatcher'
+Jan 15 18:46:16 CS-3013-VM systemd[1]: Started Network Manager Script Dispatcher Service.
+Jan 15 18:46:16 CS-3013-VM nm-dispatcher: req:1 'dhcp4-change' [enp0s3]: new request (1 scripts)
+Jan 15 18:46:16 CS-3013-VM nm-dispatcher: req:1 'dhcp4-change' [enp0s3]: start running ordered scripts...
+Jan 15 18:54:58 CS-3013-VM dbus[1483]: [system] Activating via systemd: service name='org.freedesktop.hostname1' unit='dbus-org.freedesktop.hostname1.service'
+Jan 15 18:54:58 CS-3013-VM systemd[1]: Starting Hostname Service...
+Jan 15 18:54:58 CS-3013-VM dbus[1483]: [system] Successfully activated service 'org.freedesktop.hostname1'
+Jan 15 18:54:58 CS-3013-VM systemd[1]: Started Hostname Service.
+Jan 15 19:17:01 CS-3013-VM CRON[6052]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Jan 15 19:35:57 CS-3013-VM dbus[1483]: [system] Activating via systemd: service name='org.freedesktop.hostname1' unit='dbus-org.freedesktop.hostname1.service'
+Jan 15 19:35:57 CS-3013-VM systemd[1]: Starting Hostname Service...
+Jan 15 19:35:57 CS-3013-VM dbus[1483]: [system] Successfully activated service 'org.freedesktop.hostname1'
+Jan 15 19:35:57 CS-3013-VM systemd[1]: Started Hostname Service.
+Jan 15 19:36:08 CS-3013-VM org.gnome.zeitgeist.SimpleIndexer[4739]: ** (zeitgeist-fts:5205): WARNING **: Unable to get info on application://nautilus-autostart.desktop
+Jan 15 19:42:51 CS-3013-VM kernel: [13252.450013] e1000: enp0s3 NIC Link is Down
+Jan 15 19:42:51 CS-3013-VM NetworkManager[1532]: <info>  [1516063371.4505] device (enp0s3): link disconnected (deferring action for 4 seconds)
+Jan 15 19:42:53 CS-3013-VM kernel: [13254.496757] e1000: enp0s3 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+Jan 15 19:42:53 CS-3013-VM NetworkManager[1532]: <info>  [1516063373.4980] device (enp0s3): link connected
+Jan 15 19:42:53 CS-3013-VM NetworkManager[1532]: <info>  [1516063373.4986] device (enp0s3): DHCPv4 lease renewal requested
+Jan 15 19:42:53 CS-3013-VM NetworkManager[1532]: <info>  [1516063373.4998] dhcp4 (enp0s3): canceled DHCP transaction, DHCP client pid 5707
+Jan 15 19:42:53 CS-3013-VM NetworkManager[1532]: <info>  [1516063373.4999] dhcp4 (enp0s3): state changed bound -> done
+Jan 15 19:42:53 CS-3013-VM NetworkManager[1532]: <info>  [1516063373.5039] dhcp4 (enp0s3): activation: beginning transaction (timeout in 45 seconds)
+Jan 15 19:42:53 CS-3013-VM NetworkManager[1532]: <info>  [1516063373.5083] dhcp4 (enp0s3): dhclient started with pid 6144
+Jan 15 19:42:53 CS-3013-VM dhclient[6144]: DHCPREQUEST of 10.0.2.15 on enp0s3 to 255.255.255.255 port 67 (xid=0x24b0cc71)
+Jan 15 19:42:53 CS-3013-VM dhclient[6144]: DHCPACK of 10.0.2.15 from 10.0.2.2
+Jan 15 19:42:53 CS-3013-VM NetworkManager[1532]: <info>  [1516063373.5442]   address 10.0.2.15
+Jan 15 19:42:53 CS-3013-VM NetworkManager[1532]: <info>  [1516063373.5443]   plen 24 (255.255.255.0)
+Jan 15 19:42:53 CS-3013-VM NetworkManager[1532]: <info>  [1516063373.5443]   gateway 10.0.2.2
+Jan 15 19:42:53 CS-3013-VM NetworkManager[1532]: <info>  [1516063373.5443]   server identifier 10.0.2.2
+Jan 15 19:42:53 CS-3013-VM NetworkManager[1532]: <info>  [1516063373.5444]   lease time 86400
+Jan 15 19:42:53 CS-3013-VM dbus[1483]: [system] Activating via systemd: service name='org.freedesktop.nm_dispatcher' unit='dbus-org.freedesktop.nm-dispatcher.service'
+Jan 15 19:42:53 CS-3013-VM NetworkManager[1532]: <info>  [1516063373.5444]   nameserver '192.168.1.1'
+Jan 15 19:42:53 CS-3013-VM NetworkManager[1532]: <info>  [1516063373.5444]   domain name 'fios-router.home'
+Jan 15 19:42:53 CS-3013-VM NetworkManager[1532]: <info>  [1516063373.5444] dhcp4 (enp0s3): state changed unknown -> bound
+Jan 15 19:42:53 CS-3013-VM dhclient[6144]: bound to 10.0.2.15 -- renewal in 36183 seconds.
+Jan 15 19:42:53 CS-3013-VM systemd[1]: Starting Network Manager Script Dispatcher Service...
+Jan 15 19:42:53 CS-3013-VM dbus[1483]: [system] Successfully activated service 'org.freedesktop.nm_dispatcher'
+Jan 15 19:42:53 CS-3013-VM systemd[1]: Started Network Manager Script Dispatcher Service.
+Jan 15 19:42:53 CS-3013-VM nm-dispatcher: req:1 'dhcp4-change' [enp0s3]: new request (1 scripts)
+Jan 15 19:42:53 CS-3013-VM nm-dispatcher: req:1 'dhcp4-change' [enp0s3]: start running ordered scripts...
+Jan 15 20:03:06 CS-3013-VM dbus[1483]: [system] Activating via systemd: service name='org.freedesktop.hostname1' unit='dbus-org.freedesktop.hostname1.service'
+Jan 15 20:03:06 CS-3013-VM systemd[1]: Starting Hostname Service...
+Jan 15 20:03:06 CS-3013-VM dbus[1483]: [system] Successfully activated service 'org.freedesktop.hostname1'
+Jan 15 20:03:06 CS-3013-VM systemd[1]: Started Hostname Service.
+Jan 15 20:05:15 CS-3013-VM dbus[1483]: [system] Activating via systemd: service name='org.freedesktop.hostname1' unit='dbus-org.freedesktop.hostname1.service'
+Jan 15 20:05:15 CS-3013-VM systemd[1]: Starting Hostname Service...
+Jan 15 20:05:16 CS-3013-VM dbus[1483]: [system] Successfully activated service 'org.freedesktop.hostname1'
+Jan 15 20:05:16 CS-3013-VM systemd[1]: Started Hostname Service.
+Jan 15 20:05:19 CS-3013-VM org.gnome.zeitgeist.SimpleIndexer[4739]: ** (zeitgeist-fts:5205): WARNING **: Unable to get info on application://nautilus-autostart.desktop
+Jan 15 20:06:33 CS-3013-VM dbus[1483]: [system] Activating via systemd: service name='org.freedesktop.hostname1' unit='dbus-org.freedesktop.hostname1.service'
+Jan 15 20:06:33 CS-3013-VM systemd[1]: Starting Hostname Service...
+Jan 15 20:06:33 CS-3013-VM dbus[1483]: [system] Successfully activated service 'org.freedesktop.hostname1'
+Jan 15 20:06:33 CS-3013-VM systemd[1]: Started Hostname Service.
+Jan 15 20:06:38 CS-3013-VM org.gnome.zeitgeist.SimpleIndexer[4739]: ** (zeitgeist-fts:5205): WARNING **: Unable to get info on application://nautilus-autostart.desktop
+Jan 15 20:12:50 CS-3013-VM dbus[1483]: [system] Activating via systemd: service name='org.freedesktop.hostname1' unit='dbus-org.freedesktop.hostname1.service'
+Jan 15 20:12:50 CS-3013-VM systemd[1]: Starting Hostname Service...
+Jan 15 20:12:50 CS-3013-VM dbus[1483]: [system] Successfully activated service 'org.freedesktop.hostname1'
+Jan 15 20:12:50 CS-3013-VM systemd[1]: Started Hostname Service.
+Jan 15 20:14:28 CS-3013-VM dbus[1483]: [system] Activating via systemd: service name='org.freedesktop.hostname1' unit='dbus-org.freedesktop.hostname1.service'
+Jan 15 20:14:28 CS-3013-VM systemd[1]: Starting Hostname Service...
+Jan 15 20:14:28 CS-3013-VM dbus[1483]: [system] Successfully activated service 'org.freedesktop.hostname1'
+Jan 15 20:14:28 CS-3013-VM systemd[1]: Started Hostname Service.
+Jan 15 20:17:01 CS-3013-VM CRON[6406]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Jan 15 20:40:02 CS-3013-VM dbus[1483]: [system] Activating via systemd: service name='org.freedesktop.hostname1' unit='dbus-org.freedesktop.hostname1.service'
+Jan 15 20:40:02 CS-3013-VM systemd[1]: Starting Hostname Service...
+Jan 15 20:40:02 CS-3013-VM dbus[1483]: [system] Successfully activated service 'org.freedesktop.hostname1'
+Jan 15 20:40:02 CS-3013-VM systemd[1]: Started Hostname Service.
+Jan 15 20:41:24 CS-3013-VM org.gnome.zeitgeist.SimpleIndexer[4739]: ** (zeitgeist-fts:5205): WARNING **: Unable to get info on application://nautilus-autostart.desktop
+Jan 15 20:53:12 CS-3013-VM dbus[1483]: [system] Activating via systemd: service name='org.freedesktop.hostname1' unit='dbus-org.freedesktop.hostname1.service'
+Jan 15 20:53:12 CS-3013-VM systemd[1]: Starting Hostname Service...
+Jan 15 20:53:12 CS-3013-VM dbus[1483]: [system] Successfully activated service 'org.freedesktop.hostname1'
+Jan 15 20:53:12 CS-3013-VM systemd[1]: Started Hostname Service.
+Jan 15 20:53:18 CS-3013-VM org.gnome.zeitgeist.SimpleIndexer[4739]: ** (zeitgeist-fts:5205): WARNING **: Unable to get info on application://nautilus-autostart.desktop
+Jan 15 21:17:01 CS-3013-VM CRON[6725]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Jan 15 22:12:33 CS-3013-VM kernel: [22234.977209] e1000: enp0s3 NIC Link is Down
+Jan 15 22:12:33 CS-3013-VM NetworkManager[1532]: <info>  [1516072353.9792] device (enp0s3): link disconnected (deferring action for 4 seconds)
+Jan 15 22:12:36 CS-3013-VM kernel: [22237.025598] e1000: enp0s3 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+Jan 15 22:12:36 CS-3013-VM NetworkManager[1532]: <info>  [1516072356.0264] device (enp0s3): link connected
+Jan 15 22:12:36 CS-3013-VM NetworkManager[1532]: <info>  [1516072356.0277] device (enp0s3): DHCPv4 lease renewal requested
+Jan 15 22:12:36 CS-3013-VM NetworkManager[1532]: <info>  [1516072356.0288] dhcp4 (enp0s3): canceled DHCP transaction, DHCP client pid 6144
+Jan 15 22:12:36 CS-3013-VM NetworkManager[1532]: <info>  [1516072356.0288] dhcp4 (enp0s3): state changed bound -> done
+Jan 15 22:12:36 CS-3013-VM NetworkManager[1532]: <info>  [1516072356.0305] dhcp4 (enp0s3): activation: beginning transaction (timeout in 45 seconds)
+Jan 15 22:12:36 CS-3013-VM NetworkManager[1532]: <info>  [1516072356.0324] dhcp4 (enp0s3): dhclient started with pid 7011
+Jan 15 22:12:36 CS-3013-VM dhclient[7011]: DHCPREQUEST of 10.0.2.15 on enp0s3 to 255.255.255.255 port 67 (xid=0x6a218b49)
+Jan 15 22:12:36 CS-3013-VM dhclient[7011]: DHCPACK of 10.0.2.15 from 10.0.2.2
+Jan 15 22:12:36 CS-3013-VM NetworkManager[1532]: <info>  [1516072356.0515]   address 10.0.2.15
+Jan 15 22:12:36 CS-3013-VM NetworkManager[1532]: <info>  [1516072356.0517]   plen 24 (255.255.255.0)
+Jan 15 22:12:36 CS-3013-VM NetworkManager[1532]: <info>  [1516072356.0518]   gateway 10.0.2.2
+Jan 15 22:12:36 CS-3013-VM NetworkManager[1532]: <info>  [1516072356.0518]   server identifier 10.0.2.2
+Jan 15 22:12:36 CS-3013-VM NetworkManager[1532]: <info>  [1516072356.0518]   lease time 86400
+Jan 15 22:12:36 CS-3013-VM NetworkManager[1532]: <info>  [1516072356.0519]   nameserver '192.168.1.1'
+Jan 15 22:12:36 CS-3013-VM NetworkManager[1532]: <info>  [1516072356.0519]   domain name 'fios-router.home'
+Jan 15 22:12:36 CS-3013-VM NetworkManager[1532]: <info>  [1516072356.0519] dhcp4 (enp0s3): state changed unknown -> bound
+Jan 15 22:12:36 CS-3013-VM dbus[1483]: [system] Activating via systemd: service name='org.freedesktop.nm_dispatcher' unit='dbus-org.freedesktop.nm-dispatcher.service'
+Jan 15 22:12:36 CS-3013-VM systemd[1]: Starting Network Manager Script Dispatcher Service...
+Jan 15 22:12:36 CS-3013-VM dhclient[7011]: bound to 10.0.2.15 -- renewal in 42564 seconds.
+Jan 15 22:12:36 CS-3013-VM dbus[1483]: [system] Successfully activated service 'org.freedesktop.nm_dispatcher'
+Jan 15 22:12:36 CS-3013-VM systemd[1]: Started Network Manager Script Dispatcher Service.
+Jan 15 22:12:36 CS-3013-VM nm-dispatcher: req:1 'dhcp4-change' [enp0s3]: new request (1 scripts)
+Jan 15 22:12:36 CS-3013-VM nm-dispatcher: req:1 'dhcp4-change' [enp0s3]: start running ordered scripts...
+Jan 15 22:17:01 CS-3013-VM CRON[7041]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Jan 15 23:17:01 CS-3013-VM CRON[7209]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Jan 16 00:17:01 CS-3013-VM CRON[7379]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Jan 16 00:54:28 CS-3013-VM kernel: [31949.829776] usb 1-1: USB disconnect, device number 3
+Jan 16 00:54:29 CS-3013-VM kernel: [31950.394761] usb 1-1: new full-speed USB device number 4 using ohci-pci
+Jan 16 00:54:29 CS-3013-VM kernel: [31950.641896] usb 1-1: New USB device found, idVendor=80ee, idProduct=0021
+Jan 16 00:54:29 CS-3013-VM kernel: [31950.641899] usb 1-1: New USB device strings: Mfr=1, Product=3, SerialNumber=0
+Jan 16 00:54:29 CS-3013-VM kernel: [31950.641901] usb 1-1: Product: USB Tablet
+Jan 16 00:54:29 CS-3013-VM kernel: [31950.641902] usb 1-1: Manufacturer: VirtualBox
+Jan 16 00:54:29 CS-3013-VM kernel: [31950.655218] input: VirtualBox USB Tablet as /devices/pci0000:00/0000:00:06.0/usb1/1-1/1-1:1.0/0003:80EE:0021.0003/input/input8
+Jan 16 00:54:29 CS-3013-VM kernel: [31950.655531] hid-generic 0003:80EE:0021.0003: input,hidraw0: USB HID v1.10 Mouse [VirtualBox USB Tablet] on usb-0000:00:06.0-1/input0
+Jan 16 00:54:29 CS-3013-VM mtp-probe: checking bus 1, device 4: "/sys/devices/pci0000:00/0000:00:06.0/usb1/1-1"
+Jan 16 00:54:29 CS-3013-VM mtp-probe: bus: 1, device: 4 was not an MTP device
+Jan 16 00:54:29 CS-3013-VM NetworkManager[1532]: <info>  [1516082069.6886] device (enp0s3): link disconnected (deferring action for 4 seconds)
+Jan 16 00:54:29 CS-3013-VM kernel: [31950.688688] e1000: enp0s3 NIC Link is Down
+Jan 16 00:54:29 CS-3013-VM kernel: [31950.688726] e1000 0000:00:03.0 enp0s3: Reset adapter
+Jan 16 00:54:31 CS-3013-VM kernel: [31952.801126] e1000: enp0s3 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+Jan 16 00:54:31 CS-3013-VM NetworkManager[1532]: <info>  [1516082071.8014] device (enp0s3): link connected
+Jan 16 00:54:31 CS-3013-VM NetworkManager[1532]: <info>  [1516082071.8015] device (enp0s3): DHCPv4 lease renewal requested
+Jan 16 00:54:31 CS-3013-VM NetworkManager[1532]: <info>  [1516082071.8033] dhcp4 (enp0s3): canceled DHCP transaction, DHCP client pid 7011
+Jan 16 00:54:31 CS-3013-VM NetworkManager[1532]: <info>  [1516082071.8033] dhcp4 (enp0s3): state changed bound -> done
+Jan 16 00:54:31 CS-3013-VM NetworkManager[1532]: <info>  [1516082071.8057] dhcp4 (enp0s3): activation: beginning transaction (timeout in 45 seconds)
+Jan 16 00:54:31 CS-3013-VM NetworkManager[1532]: <info>  [1516082071.8077] dhcp4 (enp0s3): dhclient started with pid 7502
+Jan 16 00:54:31 CS-3013-VM dhclient[7502]: DHCPREQUEST of 10.0.2.15 on enp0s3 to 255.255.255.255 port 67 (xid=0x39c9bc2e)
+Jan 16 00:54:31 CS-3013-VM dhclient[7502]: DHCPACK of 10.0.2.15 from 10.0.2.2
+Jan 16 00:54:31 CS-3013-VM NetworkManager[1532]: <info>  [1516082071.8266]   address 10.0.2.15
+Jan 16 00:54:31 CS-3013-VM NetworkManager[1532]: <info>  [1516082071.8266]   plen 24 (255.255.255.0)
+Jan 16 00:54:31 CS-3013-VM NetworkManager[1532]: <info>  [1516082071.8267]   gateway 10.0.2.2
+Jan 16 00:54:31 CS-3013-VM NetworkManager[1532]: <info>  [1516082071.8267]   server identifier 10.0.2.2
+Jan 16 00:54:31 CS-3013-VM NetworkManager[1532]: <info>  [1516082071.8267]   lease time 86400
+Jan 16 00:54:31 CS-3013-VM NetworkManager[1532]: <info>  [1516082071.8268]   nameserver '192.168.1.1'
+Jan 16 00:54:31 CS-3013-VM NetworkManager[1532]: <info>  [1516082071.8268]   domain name 'fios-router.home'
+Jan 16 00:54:31 CS-3013-VM NetworkManager[1532]: <info>  [1516082071.8268] dhcp4 (enp0s3): state changed unknown -> bound
+Jan 16 00:54:31 CS-3013-VM dbus[1483]: [system] Activating via systemd: service name='org.freedesktop.nm_dispatcher' unit='dbus-org.freedesktop.nm-dispatcher.service'
+Jan 16 00:54:31 CS-3013-VM systemd[1]: Starting Network Manager Script Dispatcher Service...
+Jan 16 00:54:31 CS-3013-VM dhclient[7502]: bound to 10.0.2.15 -- renewal in 35162 seconds.
+Jan 16 00:54:31 CS-3013-VM dbus[1483]: [system] Successfully activated service 'org.freedesktop.nm_dispatcher'
+Jan 16 00:54:31 CS-3013-VM systemd[1]: Started Network Manager Script Dispatcher Service.
+Jan 16 00:54:31 CS-3013-VM nm-dispatcher: req:1 'dhcp4-change' [enp0s3]: new request (1 scripts)
+Jan 16 00:54:31 CS-3013-VM nm-dispatcher: req:1 'dhcp4-change' [enp0s3]: start running ordered scripts...
+Jan 16 01:17:01 CS-3013-VM CRON[7786]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Jan 16 02:17:01 CS-3013-VM CRON[8185]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Jan 16 03:17:01 CS-3013-VM CRON[8498]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Jan 16 03:19:17 CS-3013-VM dbus[1483]: [system] Activating via systemd: service name='org.freedesktop.hostname1' unit='dbus-org.freedesktop.hostname1.service'
+Jan 16 03:19:17 CS-3013-VM systemd[1]: Starting Hostname Service...
+Jan 16 03:19:17 CS-3013-VM dbus[1483]: [system] Successfully activated service 'org.freedesktop.hostname1'
+Jan 16 03:19:17 CS-3013-VM systemd[1]: Started Hostname Service.
+Jan 16 03:20:13 CS-3013-VM dbus[1483]: [system] Activating via systemd: service name='org.freedesktop.hostname1' unit='dbus-org.freedesktop.hostname1.service'
+Jan 16 03:20:13 CS-3013-VM systemd[1]: Starting Hostname Service...
+Jan 16 03:20:13 CS-3013-VM dbus[1483]: [system] Successfully activated service 'org.freedesktop.hostname1'
+Jan 16 03:20:13 CS-3013-VM systemd[1]: Started Hostname Service.
+Jan 16 03:20:18 CS-3013-VM org.gnome.zeitgeist.SimpleIndexer[4739]: ** (zeitgeist-fts:5205): WARNING **: Unable to get info on application://nautilus-autostart.desktop
+Jan 16 03:22:45 CS-3013-VM dbus[1483]: [system] Activating via systemd: service name='org.freedesktop.hostname1' unit='dbus-org.freedesktop.hostname1.service'
+Jan 16 03:22:45 CS-3013-VM systemd[1]: Starting Hostname Service...
+Jan 16 03:22:45 CS-3013-VM dbus[1483]: [system] Successfully activated service 'org.freedesktop.hostname1'
+Jan 16 03:22:45 CS-3013-VM systemd[1]: Started Hostname Service.
+Jan 16 03:24:24 CS-3013-VM kernel: [40945.829477]  'Hello, world #1!' -- syscall1
+Jan 16 03:24:24 CS-3013-VM kernel: [40945.829600]  'Hello, world #2!' -- syscall2
+Jan 16 03:24:24 CS-3013-VM kernel: [40945.829707]  'Hello, world #3!' -- syscall3
+Jan 16 03:26:52 CS-3013-VM org.gnome.zeitgeist.SimpleIndexer[4739]: ** (zeitgeist-fts:5205): WARNING **: Unable to get info on application://nautilus-autostart.desktop
+Jan 16 03:41:17 CS-3013-VM kernel: [41958.523731]  'Hello, world #1!' -- syscall1
+Jan 16 03:41:17 CS-3013-VM kernel: [41958.531554]  'Hello, world #2!' -- syscall2
+Jan 16 03:41:17 CS-3013-VM kernel: [41958.531664]  'Hello, world #3!' -- syscall3
+Jan 16 04:03:09 CS-3013-VM kernel: [43270.596824]  'Hello, world #1!' -- syscall1
+Jan 16 04:03:09 CS-3013-VM kernel: [43270.596958]  'Hello, world #2!' -- syscall2
+Jan 16 04:03:09 CS-3013-VM kernel: [43270.597061]  'Hello, world #3!' -- syscall3
+
