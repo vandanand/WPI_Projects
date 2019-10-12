@@ -1,0 +1,7 @@
+These are the commands I run in the following order:
+1. Go to file directory using cd
+2. Run "make"
+3. Run "gcc -o testcalls testcalls.c
+4. Run "sudo insmod virusscanner.ko" and enter your password (if file exists, run "sudo rmmod virusscanner" and then insmod to get the latest file version) 
+5. Run "./testcalls" (make sure systemcall values are 0)
+6. Finally run "sudo tail -200 /var/log/syslog to view first 200 lines of this file containing user acitvity VIRUS
