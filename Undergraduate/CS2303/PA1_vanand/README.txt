@@ -1,4 +1,4 @@
-Vandana Anand's README document for PA1
+Vandana Anand's README document for PA1 
 
 
 My friend,Fareya Ikram, and I worked out the algorithm to figure out what day the year starts on. 
