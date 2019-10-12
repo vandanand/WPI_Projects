@@ -1,4 +1,4 @@
-SUMMARY:
+SUMMARY: 
 My program is the Game of Life which displays a 
 rectangular grid with cells containing life (marked
 as o's) and without life (marked as x's). Each cell 
