@@ -1,7 +1,7 @@
 ;;Vandana Anand and Manasi Danke
 ;;vanand and mmdanke
 
-;;Problem 1:
+;;Problem 1: 
 
 (define-struct ad (name duration cost nationally? time-of-day num-aired))
 ;;an Ad is a (make-ad String Natural Number Boolean TimeOfDay Natural)
