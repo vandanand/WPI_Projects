@@ -1,6 +1,8 @@
-Border relations with Mexico have never been better.
-4 7 11 18 29 47
-2 300
-883 2
-hnfpjp
-5 2 4 3 6 1
+The following are answers to each phase, in increasing difficulty, in order to diffuse Bomb 637. 
+
+Phase 1: Border relations with Mexico have never been better.
+Phase 2: 4 7 11 18 29 47
+Phase 3: 2 300
+Phase 4: 883 2
+Phase 5: hnfpjp
+Phase 6: 5 2 4 3 6 1
