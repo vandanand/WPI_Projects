@@ -1,3 +1,7 @@
+%Vandana Anand
+%CS 4033
+%Homework 5 Problem 3
+
 %defining the function at given x point
 f= @(x) x^2*exp(-x^2);
 
