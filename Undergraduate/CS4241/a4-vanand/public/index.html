@@ -1,0 +1,50 @@
+
+
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<title>CS Assignment 4</title>
+
+<script src="https://cdn.jsdelivr.net/npm/vega@5" type="module"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.0.0-beta.2" type="module"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@5" type="module"></script>
+
+</head>
+<body style="background-color: #29B5FF;">
+
+<h2 style="position:absolute;top:51%;left:39%;">Population in China Overtime</h2>
+<h4 style="transform-origin:0 0;transform:rotate(270deg);position:absolute;top:94%;left:32%;">Population (in hundred millions)</h4>
+<div id="ChinaGraph" style="position:absolute;top:60%;left:31%;"></div>
+
+<h2 style="position:absolute;top:51%;left:72%;">Population in India Overtime</h2>
+<h4 style="transform-origin:0 0;transform:rotate(270deg);position:absolute;top:93%;left:66%;">Population (in hundred millions)</h4>
+<div id="IndiaGraph" style="position:absolute;top:60%;left:65%;"></div>
+
+<h2 style="position:absolute;top:1%;left:53%;">Population in the United States Overtime</h2>
+<h4 style="transform-origin:0 0;transform:rotate(270deg);position:absolute;top:41%;left:51%;">Population (in ten millions)</h4>
+<div id="USAGraph" style="position:absolute;top:10%;left:50%;"></div>
+
+<div id="vis7" style="position:absolute;top:5%;left:5%;"></div>
+
+<button id="instructions" onclick="popup()" style="position:absolute;top:8%;left:94%;background-color:navy;color:white;height:5%;width:3%;">?</button>
+
+<script src="https://d3js.org/d3.v4.js"></script>
+<script src="main.js" type="module"></script>
+
+<script>
+  function popup() {
+    "use strict";
+    let myWindow = window.open("", "MsgWindow", "width=600,height=370");
+    myWindow.document.write("<h1>Instructions</h1>"+
+      "<p>Hello! Welcome to the site where you can view and compare population data overtime of some of the world's most populous places!<p> " +
+      "<p>The pie chart displays the percentage of people in the world that reside in China, India, and USA versus the other countries in the world." +
+      "You can change how you view the pie chart using the various controls located underneath the graph. You can also download this new view that you create" +
+      "by clicking on the 3 dots on the top right corner and clicking on 'save as PNG'.</p>" +
+      "<p>The individual graphs representing each of the most populous countries in the world, China, India, and the US depict the population in these countries" +
+      "overtime starting from 1960. Hover over one of these graphs and you will see your mouse turn into a plus sign. This will allow you to " +
+      "select a specific part of the graph to zoom into a particular area of the timeline. Use this to compare populations in each of the countries during a specific " +
+      "time period. Double click on the graph to go back to the original form.</p>");
+  }
+</script>
+
+</body>
