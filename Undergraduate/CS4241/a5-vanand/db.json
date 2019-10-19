@@ -1,0 +1,44 @@
+{
+  "appdata": [
+    {
+      "user": "vandana",
+      "model": "Toyota",
+      "year": 2002,
+      "mpg": 23,
+      "tripDistance": 300,
+      "gasPrice": 2.39,
+      "totalGallons": 13.04,
+      "totalCost": 31.16
+    },
+    {
+      "user": "bob",
+      "model": "Honda",
+      "year": 2004,
+      "mpg": 30,
+      "tripDistance": 230,
+      "gasPrice": 3.4,
+      "totalGallons": 7.66,
+      "totalCost": 26.04
+    },
+    {
+      "user": "vandana",
+      "model": "Ford",
+      "year": 2000,
+      "mpg": 14,
+      "tripDistance": 113,
+      "gasPrice": 4.5,
+      "totalGallons": 8.07,
+      "totalCost": 36.31
+    }
+  ],
+  "users": [
+    {
+      "username": "vandana",
+      "password": "hello"
+    },
+    {
+      "username": "bob",
+      "password": "jacksonhill"
+    }
+  ]
+}

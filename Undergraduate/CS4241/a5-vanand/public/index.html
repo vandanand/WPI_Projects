@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>CS4241 Assignment 3</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+
+  <!-- Login Form -->
+  <form class="text-center" id="loginForm" style="color: #757575;" >
+    <h2 style="position:absolute;left:28%;">Welcome to your Roadtrip Budgeter!</h2>
+      <div class="col-sm-5" style="position:absolute; top:14%; left:30%;">
+        <div class="card">
+
+          <h5 class="card-header info-color white-text text-center py-4">
+            <strong>Sign in</strong>
+          </h5>
+
+          <div class="card-body px-lg-5 pt-0">
+
+            <div class="md-form">
+              <label for="username">Username:</label>
+              <input type="text" id="username" name="user" class="form-control">
+            </div>
+
+            <div class="md-form">
+              <label for="password">Password:</label>
+              <input type="password" id="password" name="password" class="form-control">
+            </div>
+
+            <div class="d-flex justify-content-around">
+              <div>
+               
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="Remember">
+                  <label class="form-check-label" for="Remember">Remember me</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sign in button -->
+            <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" id="loginButton">Sign in</button>
+            <p>__________________________________________</p>
+            <!-- Register -->
+            <p>Don't have an account?</p>
+            <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" id="registerButton">Register</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  
+
+    <!-- Register Form -->
+    <form class="text-center" id="registerForm" style="display: none; color: #757575;">
+      <div class="col-sm-5" style="position:absolute; top:14%; left:30%;">
+        <div class="card">
+
+        <h5 class="card-header info-color white-text text-center py-4">
+            <strong>Sign up</strong>
+        </h5>
+
+        <div class="card-body px-lg-5 pt-0">
+
+                <div class="md-form mt-0">
+                    <label for="regUsername">Username:</label>
+                    <input type="text" id="regUsername" name="user" class="form-control" required>
+                </div>
+
+                <div class="md-form">
+                    <label for="regPassword">Password:</label>
+                    <input type="password" id="regPassword" name="password" class="form-control" required>
+                </div>
+
+                <div class="md-form">
+                    <label for="confirmPassword">Confirm Password:</label>
+                    <input type="password" id="confirmPassword" name="password" class="form-control" required>
+                </div>
+
+                <!-- Sign up button -->
+                <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" id="createButton" onclick="createUser(event)">Create Account</button>
+                <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" id="regCancelButton" style="background-color:red;color:black;">Cancel</button>
+                
+                <hr>
+          </div>
+        </div> 
+      </div>
+    </form>
+    
+
+    <!-- Main Form -->
+    <div class="background" id="mainForm" style="display: none">
+      <h1 style="color: #D121C5;">Budget For Your Next Roadtrip</h1>  
+      <button id="logoutButton" style="position:absolute; top:2%; right:8%;color: #D121C5;">Logout</button>
+      <div class="container" style="position:absolute; top:15%; left:7%;">
+        <div class="row">
+          
+          <!-- Box 1 -->
+          <div class="col-sm-4">
+            <div class="well">
+              <div class="card" style="background-color: #7FEDEB;opacity: 0.6;">       
+                <div class="card-body">                   
+                  <h5 class="card-title">About</h5>
+                    <div class="scrollable" style="overflow-y:auto; max-height:210px;">
+                      <p class="card-text">
+                        <p>Are you planning your next roadtrip? Are you looking to save money? </p>
+                        <p>Welcome to the site where you can compare different types of vehicles, whether your own 
+                          or rentals, to save on gas! </p>
+                        <p>Simply fill in your vehicle details on the right to compare gas prices and start budgeting! </p>
+                           <h2>Happy traveling!</h2>
+                       </p>
+                  </div>
+                 </div>
+                </div>
+               </div>
+            </div>
+          
+        <!-- Box 2 -->
+          <div class="col-sm-4 overflow-auto">
+            <div class="well">
+              <div class="card" style="background-color: #EFDA8A;opacity: 0.6;">       
+                <div class="card-body">                   
+                  <h5 class="card-title">Vehicle Details</h5>
+                    <div class="scrollable" style="overflow-y:auto; max-height:210px;">
+                      <p class="card-text">
+                        <form action="">
+                          <div>
+                            <label for="model">Model:</label>
+                            <input type="text" id="model" value="Enter your Car Model">
+                          </div>
+                          <br>
+                          <div>
+                            <label for="year">Year:</label>
+                            <input type="text" id="year" name="car_year" />
+                          </div>
+                          <br>
+                          <div>
+                            <label for="mpg">MPG:</label>
+                            <input type="text" id="mpg" name="car_mpg" />
+                          </div>
+                          <br>
+                          <div>
+                            <label for="distance">Trip Distance:</label>
+                            <input type="text" id="distance" name="trip_distance" />
+                          </div>
+                          <br>
+                          <div>
+                            <label for="gas">Gas Price:</label>
+                            <input type="text" id="gas" name="gas_price" />
+                          </div>
+                          <br><button id="submitForm" style="color: #D121C5;">Submit</button>
+                        </form>
+                      </p>
+                  </div>        
+                </div>
+            </div>
+        </div>
+      </div>
+          
+          <!-- Box 3 -->
+          <div class="col-sm-4 overflow-auto">
+            <div class="well"> 
+              <div class="card" style="background-color: #5CC208;opacity: 0.6;">       
+                <div class="card-body">                   
+                  <h5 class="card-title">Tips</h5>
+                    <div class="scrollable" style="overflow-y:auto; max-height:210px;">
+                      <p class="card-text">
+                        <p>1. Find Cheap Gas - Gas stations on the highway can be more expensive than the ones just a few 
+                          miles off the exit.</p>
+                        <p>2. Drive Fuel-Efficiently - The more miles per gallon the vehicle can cover, the better! 
+                          Make sure oil changes and tire checks are completed before you leave. </p>
+                        <p>3. Plan Your Route - Map your trip ahead of time and find routes near cheaper areas to fill your 
+                          gas tank. </p>
+                        <p>For more details, go to: <a href="https://www.twowanderingsoles.com/blog/cheap-road-trip-across-the-usa-47-practical-tips">47 Tips for Roadtrips</a> </p>
+                      </p>
+                   </div>        
+                 </div>
+               </div>
+             </div>
+           </div>
+      
+      <table id="CarData" class="table table-dark table-hover table-bordered display nowrap" style="width:100%;position:absolute;top:130%;opacity:0.80;"></table>
+
+     </div>
+    </div>
+   </div>
+  </body>
+
+  <script>
+
+    let current_user
+
+   const login = function(e){
+       e.preventDefault()
+
+       const username=document.getElementById('username').value,
+           password= document.getElementById('password').value;
+        const user = {
+            'username': username,
+            'password' : password
+        },
+            body = JSON.stringify(user)
+
+       fetch('/login', {
+           method: 'POST',
+           headers: { 'Content-Type': 'application/json' },
+           body
+       }).then(function(response){
+           if(response.status===200){
+               document.getElementById('loginForm').style.display="none"
+               document.getElementById('mainForm').style.display=""
+               document.getElementById('CarData').style.display =""
+               current_user = username
+               displayDataTable();
+           }else{
+               //console.log("error") 
+               window.alert("Username or password not found")
+           }
+         fetch('/register', {
+           method: 'GET'
+         }).then(function(response) {
+           return response.json()
+         }).then(function (users) {
+           console.log(users)
+         })
+       })
+   }
+
+   const logout = function(e){
+       e.preventDefault()
+       document.getElementById('mainForm').style.display = "none"
+       document.getElementById('loginForm').style.display = ""
+       document.getElementById('model').style.display = ""
+       document.getElementById('year').style.display = ""
+       document.getElementById('mpg').style.display = ""
+       document.getElementById('distance').style.display = ""
+       document.getElementById('gas').style.display = ""
+       current_user = ""
+   }
+
+   const register = function(e){
+     e.preventDefault()
+     document.getElementById('registerForm').style.display = ""
+     document.getElementById('loginForm').style.display = "none"
+   }
+   
+   const regCancel = function(e){
+     e.preventDefault()
+     document.getElementById('regUsername').value = ""
+     document.getElementById('regPassword').value = ""
+     document.getElementById('confirmPassword').value = ""
+     document.getElementById('registerForm').style.display = "none"
+     document.getElementById('loginForm').style.display = ""
+   }
+
+   const createUser = function(e) {
+
+     e.preventDefault()
+     const username = document.getElementById('regUsername').value,
+             password = document.getElementById('regPassword').value,
+             confirmPass = document.getElementById('confirmPassword').value
+     
+      fetch('/register', {
+        method: 'GET'
+      }).then(function(response) {
+        return response.json()
+      }).then(function (listOfUsers) {
+         console.log(listOfUsers)
+         checkUserReg(listOfUsers, username, password, confirmPass)
+      })
+   }
+      
+   
+   const checkUserReg = function(listOfUsers, username, password, confirmPass){
+     let existingUser = false
+      for(let i = 0; i < listOfUsers.length; i++) {
+        if(listOfUsers[i].username === username) {
+          existingUser = true
+          i = listOfUsers.length
+          window.alert("Username is already taken!")
+        }
+      }
+      if(existingUser === false) {
+        if(password != confirmPass) {
+          window.alert("Passwords don't match!")
+        }
+        else {
+
+         const user = {
+                   'username': username,
+                   'password': password
+                 },
+                 body = JSON.stringify(user)
+         fetch('/register', {
+           method: 'POST',
+           headers: {'Content-Type': 'application/json'},
+           body
+         }).then(function (response) {
+           if (response.status === 200) {
+             document.getElementById('regUsername').value = ""
+             document.getElementById('regPassword').value = ""
+             document.getElementById('confirmPassword').value = ""
+             document.getElementById('registerForm').style.display = "none"
+             document.getElementById('loginForm').style.display = ""
+           } else {
+             console.log('error')
+           }
+         })
+       }
+      }
+    }
+     
+
+  const submit = function( e ) {
+    // prevent default form action from being carried out
+    e.preventDefault()
+
+    const model = document.querySelector( '#model' ),
+          year = document.querySelector( '#year' ),
+          mpg = document.querySelector( '#mpg' ),
+          distance = document.querySelector( '#distance' ),
+          gas = document.querySelector( '#gas' )
+    
+     const json = { 'user': current_user, 'model': model.value, 'year': year.value,
+                 'mpg': mpg.value, 'tripDistance': distance.value,
+                 'gasPrice': gas.value},
+          body = JSON.stringify( json )
+
+    fetch( '/submit', { //url name = /submit
+      method:'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body //same as saying->body:body
+    })
+    .then( function( response ) {
+        document.getElementById('mainForm').style.display = ""
+        document.getElementById('loginForm').style.display ="none"
+    })
+
+    displayDataTable();
+    return false
+  }
+
+  const deleteRow = function (rowIndex) {
+    const rowData = { rowData: rowIndex};
+    const body = JSON.stringify(rowData);
+    fetch('/delete', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body
+    });
+    
+    displayDataTable();
+  };
+    
+  const changeRow = function(rowIndex){
+    fetch('/carData', {
+      method: 'GET',
+    }).then(function(response){
+      return response.json()
+    }).then(function(theCarData){
+      createDataTable(theCarData,rowIndex);
+    })
+  }
+    
+  const updateRow = function(rowIndex){
+    let newModel = document.getElementById('model'+rowIndex).value;
+    let newYear = document.getElementById('year'+rowIndex).value;
+    let newMPG = document.getElementById('mpg'+rowIndex).value;
+    let newDistance = document.getElementById('tripDistance'+rowIndex).value;
+    let newGasPrice = document.getElementById('gasPrice'+rowIndex).value;
+  
+    totalGallons = (parseInt(newDistance) / parseInt(newMPG))
+    totalCost = (totalGallons*(parseInt(newGasPrice)))
+    
+    const json ={
+      'model': newModel,
+      'year': newYear,
+      'mpg': newMPG,
+      'tripDistance': newDistance,
+      'gasPrice': newGasPrice,
+      'totalGallons': totalGallons.toFixed(2),
+      'totalCost': totalCost.toFixed(2)
+    }
+    
+    json.index = rowIndex
+    
+    const body = JSON.stringify(json)
+    fetch('/update', {
+      method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+      body
+    }).then(function(response){
+      displayDataTable();
+    })
+  }
+  
+  const displayDataTable = function(){
+    fetch('/carData', {
+      method:'GET',
+    }).then(function(response){
+      return response.json()
+    }).then(function(theCarData){
+      createDataTable(theCarData, -1);
+    })
+  }
+
+  const createDataTable = function(theCarData, updateIndex){
+
+
+      let finalCarData = document.querySelector('#CarData');
+
+      finalCarData.innerHTML =
+
+                '<h3 style="position:absolute; top:-48px;">My Saved Trip Details</h3>\n'+
+                '<tr>\n'+
+                '<th>Model</th>\n'+
+                '<th>Year</th>\n'+
+                '<th>Miles Per Gallon</th>\n'+
+                '<th>Trip Distance</th>\n'+
+                '<th>Gas Price</th>\n'+
+                '<th>Total Gallons</th>\n'+
+                '<th>Total Cost</th>\n'+
+                '<th>Edit</th>\n'+
+                '<th>Delete</th>\n'+
+                '</tr>';
+
+
+      for(let i = 0; i < theCarData.length; i++){
+        const cars = theCarData[i];
+        if(cars.user === current_user) {
+          let newLine = '<tr>';
+
+          if (i === updateIndex) {
+            newLine += ('<td><input id="model' + i + '" type="text" value="' + cars.model + '"> </div></td>\n');
+            newLine += ('<td><input id="year' + i + '" type="text" value="' + cars.year + '"> </div></td>\n');
+            newLine += ('<td><input id="mpg' + i + '" type="text" value="' + cars.mpg + '"> </div></td>\n');
+            newLine += ('<td><input id="tripDistance' + i + '" type="text" value="' + cars.tripDistance + '"> </div></td>\n');
+            newLine += ('<td><input id="gasPrice' + i + '" type="text" value="' + cars.gasPrice + '"> </div></td>\n');
+            newLine += ('<td><input id="totalGallons' + i + '" type="text" value="' + cars.totalGallons + '"> </div></td>\n');
+            newLine += ('<td><input id="totalCost' + i + '" type="text" value="' + cars.totalCost + '"> </div></td>\n');
+            newLine += ('<td><button style="background-color:grey;color:white;" id="' + i + '" onclick="updateRow(' + i + ')"> Update </button></td>\n');
+            newLine += ('<td><button style="background-color:red;color:white;" id="' + i + '" onclick="deleteRow(' + i + ')"> X </button></td>\n');
+            newLine += '</tr>';
+          } else {
+            newLine += ('<td>' + cars.model + '</td>');
+            newLine += ('<td>' + cars.year + '</td>');
+            newLine += ('<td>' + cars.mpg + ' mpg ' + '</td>');
+            newLine += ('<td>' + cars.tripDistance + ' miles' + '</td>');
+            newLine += ('<td>' + '$' + cars.gasPrice + '</td>');
+            newLine += ('<td>' + cars.totalGallons + '</td>');
+            newLine += ('<td>' + '$' + cars.totalCost + '</td>');
+            newLine += ('<td><button style="background-color:grey;color:white;" id="' + i + '" onclick="changeRow(' + i + ')"> Edit </button></td>\n');
+            newLine += ('<td><button style="background-color:red;color:white;" id="' + i + '" onclick="deleteRow(' + i + ')"> X </button></td>\n');
+            newLine += '</tr>';
+          }
+
+          finalCarData.innerHTML += newLine
+        }
+      }
+  }
+  
+
+  window.onload = function() {
+      fetch( '/test', {
+          method:'POST',
+          credentials: 'include'
+      }).then( console.log )
+          .catch( err => console.error )
+      const button = document.querySelector( '#submitForm' )
+    button.onclick = submit
+
+    const loginBtn = document.querySelector('#loginButton')
+    loginBtn.onclick = login
+
+    const logoutBtn = document.querySelector('#logoutButton')
+    logoutBtn.onclick = logout
+
+    const regBtn = document.querySelector('#registerButton')
+    regBtn.onclick = register
+    
+    const regCancelBtn =document.querySelector('#regCancelButton')
+    regCancelBtn.onclick = regCancel
+
+   }
+
+  </script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</html>
+
+
+
+
