@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>CS4241 Assignment 2</title>
+    <meta charset="utf-8">
+    
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="background">
+      <h1>Budget For Your Next Roadtrip</h1>
+      
+      <div class="transbox1">
+        <div class="inputText">
+          
+          <form action="">
+            <div>
+              <label for="name">Model:</label>
+              <input type="text" id="model" value="Enter your Car Model">
+            </div>
+            <br>
+            <div>
+              <label for="year">Year:</label>
+              <input type="text" id="year" name="car_year" />
+            </div>
+            <br>
+            <div>
+              <label for="mpg">MPG:</label>
+              <input type="text" id="mpg" name="car_mpg" />
+            </div>
+            <br>
+            <div>
+              <label for="distance">Trip Distance:</label>
+              <input type="text" id="distance" name="trip_distance" />
+            </div>
+            <br>
+            <div>
+              <label for="gas">Gas Price:</label>
+              <input type="text" id="gas" name="gas_price" />
+            </div>
+            <br><button id="submitForm">Submit</button>
+          </form>
+          
+        </div>
+     </div>
+    
+      <div class="transbox2">
+  
+        <p>Are you planning your next roadtrip? Are you looking to save money? </p>
+      
+        <p>Welcome to the site where you can compare different types of vehicles, whether your own 
+          or rentals, to save on gas! </p>
+        <p>Simply fill in your vehicle details on the right to compare gas prices and start budgeting! </p>
+        <h2>Happy traveling!</h2>
+      </div>
+      
+      <div class="transbox3">
+  
+        <h2>Tips</h2>
+        <p>1. Find Cheap Gas - Gas stations on the highway can be more expensive than the ones just a few 
+          miles off the exit.</p>
+        <p>2. Drive Fuel-Efficiently - The more miles per gallon the vehicle can cover, the better! 
+          Make sure oil changes and tire checks are completed before you leave. </p>
+        <p>3. Plan Your Route - Map your trip ahead of time and find routes near cheaper areas to fill your 
+          gas tank. </p>
+        <p>For more details, go to: <a href="https://www.twowanderingsoles.com/blog/cheap-road-trip-across-the-usa-47-practical-tips">47 Tips for Roadtrips</a> </p>
+        
+      </div>
+      
+      <table id="CarData" class="display nowrap" style="width:100%">
+
+      </table>
+    </div>
+  </body>
+  <script>
+
+  const submit = function( e ) {
+    // prevent default form action from being carried out
+    e.preventDefault()
+
+    const model = document.querySelector( '#model' ),
+          year = document.querySelector( '#year' ),
+          mpg = document.querySelector( '#mpg' ),
+          distance = document.querySelector( '#distance' ),
+          gas = document.querySelector( '#gas' )
+    
+          json = { 'model': model.value, 'year': year.value,
+                 'mpg': mpg.value, 'tripDistance': distance.value,
+                 'gasPrice': gas.value},
+          body = JSON.stringify( json )
+
+    fetch( '/submit', { //url name = /submit
+      method:'POST',
+      body //same as saying->body:body 
+    })
+    .then( function( response ) {
+ 
+      
+    })
+
+    displayDataTable();
+    return false
+  }
+
+  const deleteRow = function (rowIndex) {
+    const rowData = { rowData: rowIndex};
+    const body = JSON.stringify(rowData);
+    fetch('/delete', {
+      method: 'POST',
+      body
+    });
+    
+    displayDataTable();
+  };
+    
+  const changeRow = function(rowIndex){
+    fetch('/carData', {
+      method: 'GET'
+    }).then(function(response){
+      return response.json()
+    }).then(function(theCarData){
+      createDataTable(theCarData,rowIndex);
+    })
+  }
+    
+  const updateRow = function(rowIndex){
+    let newModel = document.getElementById('model'+rowIndex).value;
+    let newYear = document.getElementById('year'+rowIndex).value;
+    let newMPG = document.getElementById('mpg'+rowIndex).value;
+    let newDistance = document.getElementById('tripDistance'+rowIndex).value;
+    let newGasPrice = document.getElementById('gasPrice'+rowIndex).value;
+  
+    totalGallons = (parseInt(newDistance) / parseInt(newMPG))
+    totalCost = (totalGallons*(parseInt(newGasPrice)))
+    
+    const json ={
+      'model': newModel,
+      'year': newYear,
+      'mpg': newMPG,
+      'tripDistance': newDistance,
+      'gasPrice': newGasPrice,
+      'totalGallons': totalGallons.toFixed(2),
+      'totalCost': totalCost.toFixed(2)
+    }
+    
+    json.index = rowIndex
+    
+    const body = JSON.stringify(json)
+    fetch('/update', {
+      method: 'POST',
+      body
+    }).then(function(response){
+      displayDataTable();
+    })
+  }
+  
+  const displayDataTable = function(){
+    fetch('/carData', {
+      method:'GET'
+    }).then(function(response){
+      return response.json()
+    }).then(function(theCarData){
+      createDataTable(theCarData, -1);
+    })
+  }
+
+  const createDataTable = function(theCarData, updateIndex){
+
+
+      let finalCarData = document.querySelector('#CarData');
+
+      finalCarData.innerHTML =
+
+                '<h3 style="position:absolute; top:-48px;">My Saved Trip Details</h3>\n'+
+                '<tr>\n'+
+                '<th>Model</th>\n'+
+                '<th>Year</th>\n'+
+                '<th>Miles Per Gallon</th>\n'+
+                '<th>Trip Distance</th>\n'+
+                '<th>Gas Price</th>\n'+
+                '<th>Total Gallons</th>\n'+
+                '<th>Total Cost</th>\n'+
+                '<th>Edit</th>\n'+
+                '<th>Delete</th>\n'+
+                '</tr>';
+
+
+      for(let i = 0; i < theCarData.length; i++){
+        const cars = theCarData[i];
+        let newLine = '<tr>';
+        
+        if(i===updateIndex){
+          newLine+=('<td><input id="model' + i + '" type="text" value="' + cars.model + '"> </div></td>\n');
+          newLine+=('<td><input id="year' + i + '" type="text" value="' + cars.year + '"> </div></td>\n');
+          newLine+=('<td><input id="mpg' + i + '" type="text" value="' + cars.mpg + '"> </div></td>\n');
+          newLine+=('<td><input id="tripDistance' + i + '" type="text" value="' + cars.tripDistance + '"> </div></td>\n');
+          newLine+=('<td><input id="gasPrice' + i + '" type="text" value="' + cars.gasPrice + '"> </div></td>\n');
+          newLine+=('<td><input id="totalGallons' + i + '" type="text" value="' + cars.totalGallons + '"> </div></td>\n');
+          newLine+=('<td><input id="totalCost' + i + '" type="text" value="' + cars.totalCost + '"> </div></td>\n');
+          newLine+=('<td><button style="background-color:grey;color:white;" id="' + i + '" onclick="updateRow(' + i + ')"> Update </button></td>\n');
+          newLine+=('<td><button style="background-color:red;color:white;" id="' + i + '" onclick="deleteRow(' + i + ')"> X </button></td>\n');
+          newLine+='</tr>';
+        }else{
+          newLine+=('<td>' +cars.model+ '</td>');
+          newLine+=('<td>' +cars.year+ '</td>');
+          newLine+=('<td>' +cars.mpg+' mpg '+ '</td>');
+          newLine+=('<td>' +cars.tripDistance+' miles'+ '</td>');
+          newLine+=('<td>' +'$'+cars.gasPrice+ '</td>');
+          newLine+=('<td>' +cars.totalGallons+ '</td>');
+          newLine+=('<td>' +'$'+cars.totalCost+ '</td>');
+          newLine+=('<td><button style="background-color:grey;color:white;" id="' + i + '" onclick="changeRow(' + i + ')"> Edit </button></td>\n');
+          newLine+=('<td><button style="background-color:red;color:white;" id="' + i + '" onclick="deleteRow(' + i + ')"> X </button></td>\n');
+          newLine+='</tr>';
+        }
+        
+        finalCarData.innerHTML += newLine
+      }
+
+
+  }
+  
+
+const dbData = function(){
+      fetch( '/getData')
+      .then( function( response ) {
+        return json = response.json();
+        })
+      .then(function (response){
+            console.log( 'post response: ', response );
+            var getData=localStorage.getItem('firstvalue');
+            document.getElementById('emptyfield').innerText=JSON.stringify(response[getData].model)
+        });
+}
+
+
+  window.onload = function() {
+    const button = document.querySelector( 'button' )
+    button.onclick = submit
+
+
+  }
+
+  </script>
+</html>
+
+<!-- Notes
+
+json.stringify() converts a string to a JSON object
+json.parse() converts a JSON object to a string
+
+Values inside form that User submits on UI will be JSON object and then gets sent to server.js to be manipulated. 
+
+<button id=“submitButton”>Submit</button>  
+document.querySelector(‘#submitButton’)
+
+button.addEventListener(‘click”, submit) -> can add multiple listeners or remove them 
+
+can use cookies to send data back and forth 
+
+can use createElement to form your data (ie add in a table)
+-->
+
+

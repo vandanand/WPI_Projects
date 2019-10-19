@@ -1,0 +1,137 @@
+/*Style your own assignment! This is fun! */
+#CarData {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  position: absolute;
+  top: 64%;
+}
+
+#CarData td, #CarData th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#CarData tr:nth-child(even){background-color: #f2f2f2;}
+
+#CarData tr:hover {background-color: #ddd;}
+
+#CarData tr {
+  background-color: white;
+  opacity: 0.80;
+}
+
+#CarData th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #D121C5;
+  color: white;
+}
+
+h1{
+  text-align: center;
+  color: #D121C5;
+}
+
+h2{
+  text-align: center;
+}
+
+h3{
+  position: absolute;
+  top: 55%;
+  color: white;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.background {
+  background-image: url("https://cdn.glitch.com/af1eb4f5-2b7a-42cc-ad01-14ba86ec56bf%2FRoadTrip.jpg?v=1567922082812");
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position: center;
+  height: 100%;
+} 
+
+div.transbox1 {
+  margin: 30px;
+  background-color: #EFDA8A;/*#EEC075;*/
+  border: 1px solid black;
+  opacity: 0.6;
+  width: 25%;
+  height: 36%;
+  position: absolute;
+  left: 35%;
+  
+}
+
+div.transbox1:hover {
+  opacity: 1.0;
+}
+
+div.inputText {
+  margin: 5%;
+  font-weight: bold;
+  color: #000000;
+}
+
+#submitForm {
+  background-color: #D121C5;
+  color: white;
+  position: absolute;
+  left: 37%;
+  height: 20px;
+  width: 100px;
+}
+
+div.transbox2 {
+  margin: 30px;
+  background-color: #7FEDEB;
+  border: 1px solid black;
+  opacity: 0.6;
+  width: 30%;
+  height: 36%;
+  position: absolute;
+  overflow: auto;
+  
+}
+
+div.transbox2:hover {
+  opacity: 1.0;
+}
+
+div.transbox2 p {
+  margin: 5%;
+  font-weight: bold;
+  color: #000000;
+  overflow: auto;
+}
+
+div.transbox3 {
+  margin: 30px;
+  background-color: #5CC208;
+  border: 1px solid black;
+  opacity: 0.6;
+  width: 30%;
+  height: 36%;
+  position: absolute;
+  left: 65%;
+  overflow: auto;
+  
+}
+
+div.transbox3:hover {
+  opacity: 1.0;
+}
+
+div.transbox3 p {
+  margin: 5%;
+  font-weight: bold;
+  color: #000000;
+  overflow: auto;
+}
+
