@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Beach</title>
+    <meta name="description" content="Basic Scene - A-Frame">
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <a-asset-item id="palmtree1-obj" src="https://raw.githubusercontent.com/lcgonsalves/vr-experiment/master/fixed-palm-tree-assets/Palm_Tree.obj"></a-asset-item>
+        <a-asset-item id="palmtree2-obj" src="https://ucarecdn.com/5972cb0b-e9d2-43bf-aa36-aad70f76048f/"></a-asset-item>
+        <a-asset-item id="sailboat-obj" src="https://ucarecdn.com/aa11e09f-bd87-4196-b932-bbbae04f5434/"></a-asset-item>
+        <a-asset-item id="yacht-obj" src="https://ucarecdn.com/4388eeeb-64f2-495a-9a62-b0aa0736cd0f/"></a-asset-item>
+        <a-asset-item id="dolphin1-obj" src="https://ucarecdn.com/05b2d4a1-1a07-4d93-a705-1aab2add2839/"></a-asset-item>
+        <a-asset-item id="dolphin2-obj" src="https://ucarecdn.com/514dbd96-e8b0-412a-9f8d-795c1389ede6/"></a-asset-item>
+        <a-asset-item id="dolphin3-obj" src="https://ucarecdn.com/398917f5-14fc-4552-be61-518266b1422f/"></a-asset-item>
+        <a-asset-item id="jetski-obj" src="https://ucarecdn.com/e5fbf99e-e2e6-414c-8700-479cf1b2ad12/"></a-asset-item>
+        <a-asset-item id="rowboat-obj" src="https://ucarecdn.com/f01af3ab-7939-4281-9fa5-e07a14e08818/"></a-asset-item>
+        <a-asset-item id="volleyball-obj" src="https://ucarecdn.com/daeee5d2-a450-47e1-9ad9-8ef7204515ac/"></a-asset-item>
+        <a-asset-item id="hut-obj" src="https://ucarecdn.com/b6e4aa04-829d-41b6-b35c-d452db248e39/"></a-asset-item>
+        <a-asset-item id="crab-obj" src="https://ucarecdn.com/d960de6e-70a6-4a44-8d30-b20335caa1fb/"></a-asset-item>
+        <a-asset-item id="beachchair-obj" src=" https://ucarecdn.com/98c96e51-9f6c-4ddb-b8ac-a322e7319290/"></a-asset-item>
+        <a-asset-item id="deckchair-obj" src="https://ucarecdn.com/251c6c11-cbcb-4d14-9344-973b788ab6ac/"></a-asset-item>
+        <a-asset-item id="woodchair-obj" src="https://ucarecdn.com/54f89c45-fa1f-456a-a922-e92e2197d690/"></a-asset-item>
+        <a-asset-item id="rooms-obj" src="https://ucarecdn.com/f3469355-c075-40a3-a680-51eb0a10a06e/"></a-asset-item>
+        <a-asset-item id="shack-obj" src="https://ucarecdn.com/977cf9d5-e0f9-4fa4-833e-8807f3e74afc/"></a-asset-item>
+        <a-asset-item id="rocks-obj" src="https://ucarecdn.com/9338b79a-a5c2-46a0-8949-037c220b1bde/"></a-asset-item>
+        <a-asset-item id="treerock-obj" src="https://ucarecdn.com/a628a638-9155-4bcd-bb48-ba54caa01719/"></a-asset-item>
+        <a-asset-item id="flipflop-obj" src="https://ucarecdn.com/abd5b4af-e5ef-4665-9fde-eb9f560705a7/"></a-asset-item>
+        <a-asset-item id="groundseagull-obj" src="https://ucarecdn.com/24bb9bae-de99-4d38-ae0b-fb021d5d2bb7/"></a-asset-item>
+        <a-asset-item id="flyingseagull-obj" src="https://ucarecdn.com/743dae40-baaf-4353-86c9-63874146c39a/"></a-asset-item>
+        <a-asset-item id="surfboard-obj" src="https://ucarecdn.com/996e7587-4a9f-44f2-919d-70614a83ec86/"></a-asset-item>
+        <img id="groundTexture" src="https://cdn.glitch.com/0814cd6a-8152-4dd6-a278-d1ceb09601a5%2Fbeach.jpg?1524693155111">
+        <img id="skyTexture" src="https://ucarecdn.com/3374a001-6f7e-479a-983f-d01cacb6a219/">
+        <audio id= "beach" src= "https://cdn.glitch.com/0814cd6a-8152-4dd6-a278-d1ceb09601a5%2Fbeach.mp3?1524784561323"></audio>
+        <audio id= "rustle" src="https://cdn.glitch.com/0814cd6a-8152-4dd6-a278-d1ceb09601a5%2Frustle.mp3?1524784687502"></audio>
+        <audio id= "dolphin" src="https://cdn.glitch.com/0814cd6a-8152-4dd6-a278-d1ceb09601a5%2Fdolphin.mp3?1524784700883"></audio>
+
+      </a-assets>
+      
+      <!-- 3D Models -->
+      <a-entity id="palmtree_1" obj-model="obj:#palmtree2-obj" material="color: #7fff00" rotation="0 90 0" scale="0.5 0.5 0.5" position="-83.294 0 40" sound="autoplay:true;loop:true;src:#rustle"></a-entity>
+      <a-entity id="palmtree_2" obj-model="obj:#palmtree2-obj" material="color: #7fff00" rotation="0 270 0" scale="0.5 0.5 0.5" position="80.296 0 42.737" sound="autoplay:true;loop:true;src:#rustle"></a-entity>
+      <a-entity id="palmtree_3" obj-model="obj:#palmtree1-obj" material="color: #006400" rotation="270 360 0" scale="0.3 0.3 0.3" position="-28.248 0 59.772" sound="autoplay:true;loop:true;src:#rustle"></a-entity>
+      <a-entity id="palmtree_4" obj-model="obj:#palmtree1-obj" material="color: #006400" rotation="270 180 0" scale="0.3 0.3 0.3" position="28.248 0 59.772" sound="autoplay:true;loop:true;src:#rustle"></a-entity>
+      <a-entity id="sailboat_1" obj-model="obj:#sailboat-obj" material="color:#ff0000" rotation="0 270 10" scale="0.05 0.05 0.05" position="-39.413 -2.565 -68.607"></a-entity>
+      <a-entity id="sailboat_2" obj-model="obj:#sailboat-obj" material="color:#000080" rotation="-3 235 10" scale="0.05 0.05 0.05" position="55.303 -2.170 -58.753"></a-entity>
+      <a-entity id="yacht_1" obj-model="obj:#yacht-obj" material="color:#FFFF00" rotation="0 50 0" scale="0.004 0.004 0.004" position="7.369 1.056 -60.302"></a-entity>
+      <a-entity id="dolphin_1" obj-model="obj:#dolphin2-obj" material="color:#6F7285" rotation="250 -70 60" scale="0.03 0.03 0.03" position="13.336 10.4 -50" sound="autoplay:true;loop:true;src:#dolphin"></a-entity>
+      <a-entity id="dolphin_2" obj-model="obj:#dolphin2-obj" material="color:#6F7285" rotation="-70 -90 270" scale="0.03 0.03 0.03" position="-13.336 9.918 -50" sound="autoplay:true;loop:true;src:#dolphin"></a-entity>
+      <a-entity id="jetski_1" obj-model="obj:#jetski-obj" material="color:#32CD32" rotation="270 -20 0" scale="0.5 0.5 0.5" position="-53.583 0 -37.683"></a-entity>
+      <a-entity id="jetski_2" obj-model="obj:#jetski-obj" material="color:#228B22" rotation="270 -20 0" scale="0.5 0.5 0.5" position="-45.246 0 -42.687"></a-entity>
+      <a-entity id="jetski_3" obj-model="obj:#jetski-obj" material="color:#006400" rotation="270 -20 0" scale="0.5 0.5 0.5" position="-57.914 0 -28.602"></a-entity>
+      <a-entity id="rowboat_1" obj-model="obj:#rowboat-obj" material="color:#CD5C5C" rotation="0 -40 0" scale="0.4 0.4 0.4" position="50.840 0 -27.222"></a-entity>
+      <a-entity id="volleyball_1" obj-model="obj:#volleyball-obj" rotation="0 0 0" scale="0.005 0.005 0.005" position="-20 -0.171 -1.688"></a-entity>
+      <a-entity id="hut_1" obj-model="obj:https://ucarecdn.com/b6e4aa04-829d-41b6-b35c-d452db248e39/" material="color:#CD853F" rotation="0 180 0" scale="0.2 0.2 0.2" position="1.805 -0.615 65.171"></a-entity>
+      <a-entity id="crab_1" obj-model="obj:#crab-obj" material="color:#B22222" rotation="0 0 0" scale="0.4 0.4 0.4" position="41.756 0.477 6.998"></a-entity>
+      <a-entity id="chair_1" obj-model="obj:#beachchair-obj" material="color:#F5DEB3" rotation="0 295 0" scale="0.025 0.025 0.025" position="11.236 -0.156 18.733"></a-entity>
+      <a-entity id="chair_2" obj-model="obj:#deckchair-obj" material= "color:#e9967a" rotation="-90 180 -20" scale="0.05 0.05 0.05" position="-12.207 0.008 20"></a-entity>
+      <a-entity id="chair_3" obj-model="obj:#woodchair-obj" material= "color:#a0522d" rotation="0 65 0" scale="0.130 0.130 0.130" position="-19.346 0 17.081"></a-entity>
+      <a-entity id="chair_4" obj-model="obj:#woodchair-obj" material= "color:#a0522d" rotation="0 120 0" scale="0.130 0.130 0.130" position="20.615 0 17.081"></a-entity>
+      <a-entity id="outhouse_1" obj-model="obj:#rooms-obj" material= "color:#6495ED" rotation="0 90 0" scale="2 2 2" position="-59.120 0 13.363"></a-entity>
+      <a-entity id="outhouse_2" obj-model="obj:#rooms-obj" material= "color:#6495ED" rotation="0 270 0" scale="2 2 2" position="59.120 0 13.363"></a-entity>
+      <a-entity id="shack_1" obj-model="obj:#shack-obj" material= "color:#8B8B83" rotation="0 45 0" scale="0.05 0.05 0.05" position="62.094 6.201 75.482"></a-entity>
+      <a-entity id="surf_1" obj-model="obj:#surfboard-obj" material= "color:#8470ff" rotation="90 -30 90" scale="0.0001 0.001 0.0001" position="63.500 3.661 64"></a-entity>
+      <a-entity id="surf_2" obj-model="obj:#surfboard-obj" material= "color:#40e0d0" rotation="90 -55 90" scale="0.0001 0.001 0.0001" position="53.964 3.661 74"></a-entity>
+      <a-entity id="surf_3" obj-model="obj:#surfboard-obj" material= "color:#fa8072" rotation="90 -40 90" scale="0.0001 0.001 0.0001" position="57.5 3.661 68"></a-entity>
+      <a-entity id="treerock_1" obj-model="obj:#treerock-obj" material= "color:#bebebe" rotation="0 -40 0" scale="0.01 0.01 0.01" position="-66.367 11 79.771"></a-entity>
+      <a-entity id="rock_1" obj-model="obj:#rocks-obj" material= "color:#a9a9a9" rotation="40 175 190" scale="2 2 2" position="-90.884 10.414 24.912"></a-entity>
+      <a-entity id="rock_2" obj-model="obj:#rocks-obj" material= "color:#a9a9a9" rotation="40 175 190" scale="2 2 2" position="90.884 10.414 24.912"></a-entity>
+      <a-entity id="groundseagull_1" obj-model="obj:#groundseagull-obj" material= "color:#f5f5f5" rotation="0 270 0" scale="0.04 0.04 0.04" position="-90.419 2.615 -4.410"></a-entity>
+      <a-entity id="groundseagull_2" obj-model="obj:#groundseagull-obj" material= "color:#f5f5f5" rotation="0 0 0" scale="0.04 0.04 0.04" position="26.028 1.054 -2.494"></a-entity>
+      <a-entity id="groundseagull_3" obj-model="obj:#groundseagull-obj" material= "color:#f5f5f5" rotation="0 270 0" scale="0.04 0.04 0.04" position="-43.248 1.054 30.437"></a-entity>
+      <a-entity id="groundseagull_4" obj-model="obj:#groundseagull-obj" material= "color:#f5f5f5" rotation="0 90 0" scale="0.04 0.04 0.04" position="44.002 1.054 43.191"></a-entity>
+      <a-entity id="flyseagull_1" obj-model="obj:#flyingseagull-obj" material= "color:#f5f5f5" rotation="0 350 0" scale="0.01 0.01 0.01" position="-75 30 -54"></a-entity>
+      <a-entity id="flyseagull_2" obj-model="obj:#flyingseagull-obj" material= "color:#f5f5f5" rotation="0 -130 0" scale="0.01 0.01 0.01" position="75 30 -54"></a-entity>
+      <a-entity id="flyseagull_3" obj-model="obj:#flyingseagull-obj" material= "color:#f5f5f5" rotation="0 350 0" scale="0.01 0.01 0.01" position="-55.438 60 67.958"></a-entity>
+      <a-entity id="flyseagull_4" obj-model="obj:#flyingseagull-obj" material= "color:#f5f5f5" rotation="0 -130 0" scale="0.01 0.01 0.01" position="52.916 47.436 54"></a-entity>
+      
+      <a-sphere src="https://ucarecdn.com/189606c8-b84b-43ab-bd6b-e9bc89ad3875/" position="11.281 0.691 -8.444" scale="1 1 1"></a-sphere>
+      
+      <!-- Sounds -->
+      <a-sound src="#beach" id="Waterline1" sound="autoplay:true;loop:true" position="0 0 -9.102"></a-sound>
+      
+      <!-- The rest -->
+      <a-sky height="2048" src="#skyTexture" width="2048" rotation="180 0 0" ></a-sky>
+      <a-light type="point" intensity="2" position="-96.42 189.409 -123.104" light="intensity:1.1"></a-light>
+      <a-plane src="#groundTexture" rotation="-90 180 0" height="200" width="200"></a-plane>
+      <a-text value="Look Around the Beach VR!" color="#BBB" position="-2.770 5.000 -10.821" scale="2.0 2.0 2.0"></a-text>
+
+      <a-camera>
+        <a-cursor color="#FAFAFA"></a-cursor>
+      </a-camera>
+    </a-scene>
+  </body>
+</html>
