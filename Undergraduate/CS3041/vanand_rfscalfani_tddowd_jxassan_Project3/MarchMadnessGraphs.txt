@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<head>
+  <title>Vega Lite Graphs</title>
+  <meta charset="utf-8">
+
+  <script src="https://cdn.jsdelivr.net/npm/vega@5/build/vega.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.0.0/build/vega-lite.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@5/build/vega-embed.js"></script>
+
+  <style media="screen">
+    /* Add space between Vega-Embed links  */
+    .vega-actions a {
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 style="position:absolute;top:0%;left:2%;"><br> March Madness 2018 Predictions </br><h1>
+  <h5 style="position:absolute;top:9%;left:2%;"><br>The National Collegiate Athletic Association (NCAA) Basketball Championship</br></h5>
+  <h1><br>  </br><h1>
+  <h3 style="position:absolute;top:19%;left:46%;">Team Rating vs Round Eliminated</h3>
+  <!-- Container for the visualization -->
+  <div id="vis1" style="position:absolute;top:31%;left:45%;"></div>
+
+  <script>
+  // Assign the specification to a local variable vlSpec.
+  var visOne = {
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "data": { 
+    "url": "https://raw.githubusercontent.com/J3r3my97/NCAADATA/master/scatterPlotNCAA.csv", 
+    "format": {
+        "type": "csv"
+      } 
+  },
+  "mark": "circle",
+  "encoding": {
+    "x": {"field": "round_elim", "type": "quantitative"},
+    "y": {"field": "team_rating", "type": "quantitative"}
+    }
+  };
+ 
+  vegaEmbed("#vis1", visOne);
+  </script>
+
+  <h3 style="position:absolute;top:19%;left:76%;"> Team Rating vs Gender </h3>
+  <!-- Container for the visualization -->
+  <div id="vis2" style="position:absolute;top:27%;left:75%;"></div>
+
+  <script>
+  var visTwo = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "data": { 
+    "url": "https://projects.fivethirtyeight.com/march-madness-api/2018/fivethirtyeight_ncaa_forecasts.csv", 
+    "format": {
+        "type": "csv"
+      } 
+  },
+  "mark": "circle",
+  "encoding": {
+    "x": {
+      "field": "gender",
+      "type": "nominal"
+    },
+    "y": {
+      "field": "team_rating",
+      "type": "quantitative"
+    },
+    "size": {
+      "aggregate": "count",
+      "type": "quantitative"
+    }
+   }
+  };
+  
+  // Embed the visualization in the container with id `vis`
+  vegaEmbed("#vis2", visTwo);
+  </script>
+  <h3 style="position:absolute;top:88%;left:3%;"><br>Chances of each prominent team getting into the Final Four, the final round of the championship, versus the chances of other teams. </br></h3>
+  <h3 style="position:absolute;top:102%;left:53%;"> Villanova vs Other Teams </h3>
+
+  <!-- Container for the visualization -->
+  <div id="vis3" style="position:absolute;top:112%;left:53%;"></div>
+
+  <script>
+  var visThree = {
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "width": 200,
+  "height": 200,
+  "autosize": "none",
+
+  "signals": [
+    {
+      "name": "startAngle", "value": 0,
+      "bind": {"input": "range", "min": 0, "max": 6.29, "step": 0.01}
+    },
+    {
+      "name": "endAngle", "value": 6.29,
+      "bind": {"input": "range", "min": 0, "max": 6.29, "step": 0.01}
+    },
+    {
+      "name": "padAngle", "value": 0,
+      "bind": {"input": "range", "min": 0, "max": 0.1}
+    },
+    {
+      "name": "innerRadius", "value": 0,
+      "bind": {"input": "range", "min": 0, "max": 90, "step": 1}
+    },
+    {
+      "name": "cornerRadius", "value": 0,
+      "bind": {"input": "range", "min": 0, "max": 10, "step": 0.5}
+    },
+    // {
+    //   "name": "sort", "value": false,
+    //   "bind": {"input": "checkbox"}
+    // }
+  ],
+
+  "data": [
+    {
+      "name": "table",
+      "values": [
+        {"id": 'Villanova - 49.7%', "field": 0.497},
+        {"id": 'Other Teams - 50.3%', "field": 0.503},
+      ],
+      "transform": [
+        {
+          "type": "pie",
+          "field": "field",
+          "startAngle": {"signal": "startAngle"},
+          "endAngle": {"signal": "endAngle"},
+          // "sort": {"signal": "sort"}
+        }
+      ]
+    }
+  ],
+
+  "scales": [
+    {
+      "name": "color",
+      "type": "ordinal",
+      "range": ["#ee7934", "#f5b96d"]
+    }
+  ],
+
+  "legends": [
+    {
+      stroke: 'color',
+      title: 'Legend',
+      orient: 'top-left',
+      encode: {
+        symbols: {
+          update: {
+            fill: { value: '' },
+            strokeWidth: { value: 4 },
+            size: { value: 60 }
+          }
+        }
+      }
+    }
+  ],
+
+  "marks": [
+    {
+      "type": "arc",
+      "from": {"data": "table"},
+      "encode": {
+        "enter": {
+          "fill": {"scale": "color", "field": "id"},
+          "x": {"signal": "width / 2"},
+          "y": {"signal": "height / 2"}
+        },
+        "update": {
+          "startAngle": {"field": "startAngle"},
+          "endAngle": {"field": "endAngle"},
+          "padAngle": {"signal": "padAngle"},
+          "innerRadius": {"signal": "innerRadius"},
+          "outerRadius": {"signal": "width / 2"},
+          "cornerRadius": {"signal": "cornerRadius"}
+        }
+      }
+    }
+   ]
+  };
+  
+  // Embed the visualization in the container with id `vis`
+  vegaEmbed("#vis3", visThree);
+  </script>
+
+  <h3 style="position:absolute;top:102%;left:28%;">Michigan vs Other Teams</h3>
+
+  <!-- Container for the visualization -->
+  <div id="vis4" style="position:absolute;top:112%;left:28%;"></div>
+
+  <script>
+  // Assign the specification to a local variable vlSpec.
+  var visFour = {
+    "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "width": 200,
+  "height": 200,
+  "autosize": "none",
+
+  "signals": [
+    {
+      "name": "startAngle", "value": 0,
+      "bind": {"input": "range", "min": 0, "max": 6.29, "step": 0.01}
+    },
+    {
+      "name": "endAngle", "value": 6.29,
+      "bind": {"input": "range", "min": 0, "max": 6.29, "step": 0.01}
+    },
+    {
+      "name": "padAngle", "value": 0,
+      "bind": {"input": "range", "min": 0, "max": 0.1}
+    },
+    {
+      "name": "innerRadius", "value": 0,
+      "bind": {"input": "range", "min": 0, "max": 90, "step": 1}
+    },
+    {
+      "name": "cornerRadius", "value": 0,
+      "bind": {"input": "range", "min": 0, "max": 10, "step": 0.5}
+    },
+    // {
+    //   "name": "sort", "value": false,
+    //   "bind": {"input": "checkbox"}
+    // }
+  ],
+
+  "data": [
+    {
+      "name": "table",
+      "values": [
+        {"id": 'Michigan - 13.7%', "field": 0.137},
+        {"id": 'Other Teams - 86.3%', "field": 0.863}
+      ],
+      "transform": [
+        {
+          "type": "pie",
+          "field": "field",
+          "startAngle": {"signal": "startAngle"},
+          "endAngle": {"signal": "endAngle"},
+          // "sort": {"signal": "sort"}
+        }
+      ]
+    }
+  ],
+
+  "scales": [
+    {
+      "name": "color",
+      "type": "ordinal",
+      "range": ["#57aa33", "#77e78a"]
+    }
+  ],
+
+    "legends": [
+    {
+      stroke: 'color',
+      title: 'Legend',
+      orient: 'top-left',
+      encode: {
+        symbols: {
+          update: {
+            fill: { value: '' },
+            strokeWidth: { value: 4 },
+            size: { value: 60 }
+          }
+        }
+      }
+    }
+  ],
+
+  "marks": [
+    {
+      "type": "arc",
+      "from": {"data": "table"},
+      "encode": {
+        "enter": {
+          "fill": {"scale": "color", "field": "id"},
+          "x": {"signal": "width / 2"},
+          "y": {"signal": "height / 2"}
+        },
+        "update": {
+          "startAngle": {"field": "startAngle"},
+          "endAngle": {"field": "endAngle"},
+          "padAngle": {"signal": "padAngle"},
+          "innerRadius": {"signal": "innerRadius"},
+          "outerRadius": {"signal": "width / 2"},
+          "cornerRadius": {"signal": "cornerRadius"}
+        }
+      }
+    }
+   ]
+  };
+ 
+  vegaEmbed("#vis4", visFour);
+  </script>
+
+  <h3 style="position:absolute;top:102%;left:3%;">Kansas vs Other Teams</h3>
+
+  <!-- Container for the visualization -->
+  <div id="vis5" style="position:absolute;top:112%;left:3%;"></div>
+
+  <script>
+  // Assign the specification to a local variable vlSpec.
+  var visFive = {
+    "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "width": 200,
+  "height": 200,
+  "autosize": "none",
+  "signals": [
+    {
+      "name": "startAngle", "value": 0,
+      "bind": { "input": "range", "min": 0, "max": 6.29, "step": 0.01 }
+    },
+    {
+      "name": "endAngle", "value": 6.29, 
+      "bind": { "input": "range", "min": 0, "max": 6.29, "step": 0.01 }
+    },
+    {
+      "name": "padAngle", "value": 0, 
+      "bind": { "input": "range", "min": 0, "max": 0.1 }
+    },
+    {
+      "name": "innerRadius", "value": 0,
+      "bind": { "input": "range", "min": 0, "max": 90, "step": 1 }
+    },
+    {
+      "name": "cornerRadius", "value": 0,
+      "bind": { "input": "range", "min": 0, "max": 10, "step": 0.5 }
+    },
+    // {
+    //   "name": "sort", "value": false,
+    //   "bind": { "input": "checkbox" }
+    // }
+  ],
+  "data": [
+    {
+      "name": "table",
+      "values": [
+        { "id": 'Kansas - 31.8%', "field": 0.318 },
+        { "id": 'Other Teams - 68.2%', "field": 0.682 }
+      ],
+      "transform": [
+        {
+          "type": "pie",
+          "field": "field",
+          "startAngle": { "signal": "startAngle"},
+          "endAngle": { "signal": "endAngle" },
+          // "sort": { "signal": "sort" }
+        }
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "color",
+      "type": "ordinal",
+      "range": ["#2574b7", "#a9c5ea"]
+    }
+  ],
+
+    "legends": [
+    {
+      stroke: 'color',
+      title: 'Legend',
+      orient: 'top-left',
+      encode: {
+        symbols: {
+          update: {
+            fill: { value: '' },
+            strokeWidth: { value: 4 },
+            size: { value: 60 }
+          }
+        }
+      }
+    }
+  ],
+
+  "marks": [
+    {
+      "type": "arc",
+      "from": {
+        "data": "table"
+      },
+      "encode": {
+        "enter": {
+          "fill": {
+            "scale": "color",
+            "field": "id"
+          },
+          "x": {
+            "signal": "width / 2"
+          },
+          "y": {
+            "signal": "height / 2"
+          }
+        },
+        "update": {
+          "startAngle": {
+            "field": "startAngle"
+          },
+          "endAngle": {
+            "field": "endAngle"
+          },
+          "padAngle": {
+            "signal": "padAngle"
+          },
+          "innerRadius": {
+            "signal": "innerRadius"
+          },
+          "outerRadius": {
+            "signal": "width / 2"
+          },
+          "cornerRadius": {
+            "signal": "cornerRadius"
+          }
+        }
+      }
+    }
+   ]
+  };
+ 
+  vegaEmbed("#vis5", visFive);
+  </script>
+
+  <h3 style="position:absolute;top:102%;left:78%;">Loyola vs Other Teams</h3>
+ 
+  <!-- Container for the visualization -->
+  <div id="vis6" style="position:absolute;top:112%;left:77%;"></div>
+
+  <script>
+  // Assign the specification to a local variable vlSpec.
+  var visSix = {
+    "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "width": 200,
+  "height": 200,
+  "autosize": "none",
+
+  "signals": [
+    {
+      "name": "startAngle", "value": 0,
+      "bind": {"input": "range", "min": 0, "max": 6.29, "step": 0.01}
+    },
+    {
+      "name": "endAngle", "value": 6.29,
+      "bind": {"input": "range", "min": 0, "max": 6.29, "step": 0.01}
+    },
+    {
+      "name": "padAngle", "value": 0,
+      "bind": {"input": "range", "min": 0, "max": 0.1}
+    },
+    {
+      "name": "innerRadius", "value": 0,
+      "bind": {"input": "range", "min": 0, "max": 90, "step": 1}
+    },
+    {
+      "name": "cornerRadius", "value": 0,
+      "bind": {"input": "range", "min": 0, "max": 10, "step": 0.5}
+    },
+    // {
+    //   "name": "sort", "value": false,
+    //   "bind": {"input": "checkbox"}
+    // }
+  ],
+
+  "data": [
+    {
+      "name": "table",
+      "values": [
+        {"id": 'Loyola - 0.8%', "field": 0.008},
+        {"id": 'Other Teams - 99.2%', "field": 0.992}
+      ],
+      "transform": [
+        {
+          "type": "pie",
+          "field": "field",
+          "startAngle": {"signal": "startAngle"},
+          "endAngle": {"signal": "endAngle"},
+          // "sort": {"signal": "sort"}
+        }
+      ]
+    }
+  ],
+
+  "scales": [
+    {
+      "name": "color",
+      "type": "ordinal",
+      "range": ["#e93f33", "#ee8a8d"]
+    }
+  ],
+
+    "legends": [
+    {
+      stroke: 'color',
+      title: 'Legend',
+      orient: 'top-left',
+      encode: {
+        symbols: {
+          update: {
+            fill: { value: '' },
+            strokeWidth: { value: 4 },
+            size: { value: 60 }
+          }
+        }
+      }
+    }
+  ],
+
+  "marks": [
+    {
+      "type": "arc",
+      "from": {"data": "table"},
+      "encode": {
+        "enter": {
+          "fill": {"scale": "color", "field": "id"},
+          "x": {"signal": "width / 2"},
+          "y": {"signal": "height / 2"}
+        },
+        "update": {
+          "startAngle": {"field": "startAngle"},
+          "endAngle": {"field": "endAngle"},
+          "padAngle": {"signal": "padAngle"},
+          "innerRadius": {"signal": "innerRadius"},
+          "outerRadius": {"signal": "width / 2"},
+          "cornerRadius": {"signal": "cornerRadius"}
+        }
+      }
+    }
+   ]
+  };
+ 
+  vegaEmbed("#vis6", visSix);
+  </script>
+  <h5 style="position:absolute;top:22%;left:7%;"><br>Chances of prominent teams winning the Final Four Championship.</br></h5>
+  <h3 style="position:absolute;top:19%;left:16%;">Final Four Teams</h3>
+
+  <!-- Container for the visualization -->
+  <div id="vis7" style="position:absolute;top:32%;left:11%;"></div>
+
+  <script>
+  // Assign the specification to a local variable vlSpec.
+  var visSeven = {
+    "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "width": 260,
+  "height": 260,
+  "autosize": "none",
+
+  "signals": [
+    {
+      "name": "startAngle", "value": 0,
+      "bind": {"input": "range", "min": 0, "max": 6.29, "step": 0.01}
+    },
+    {
+      "name": "endAngle", "value": 6.29,
+      "bind": {"input": "range", "min": 0, "max": 6.29, "step": 0.01}
+    },
+    {
+      "name": "padAngle", "value": 0,
+      "bind": {"input": "range", "min": 0, "max": 0.1}
+    },
+    {
+      "name": "innerRadius", "value": 0,
+      "bind": {"input": "range", "min": 0, "max": 90, "step": 1}
+    },
+    {
+      "name": "cornerRadius", "value": 0,
+      "bind": {"input": "range", "min": 0, "max": 10, "step": 0.5}
+    },
+    {
+      "name": "sort", "value": false,
+      "bind": {"input": "checkbox"}
+    }
+  ],
+
+  "data": [
+    {
+      "name": "table",
+      "values": [
+        {"id": 'Kansas - 22.52%', "field": 0.22522148},
+        {"id": 'Villanova - 45.60%', "field": 0.4559603},
+        {"id": 'Michigan - 24.98%', "field": 0.24978192},
+        {"id": 'Loyola - 6.90%', "field": 0.06903631}
+      ],
+      "transform": [
+        {
+          "type": "pie",
+          "field": "field",
+          "startAngle": {"signal": "startAngle"},
+          "endAngle": {"signal": "endAngle"},
+          "sort": {"signal": "sort"}
+        }
+      ]
+    }
+  ],
+
+  "scales": [
+    {
+      "name": "color",
+      "type": "ordinal",
+      "range": {"scheme": "category10"}
+    }
+  ],
+  "legends": [
+    {
+      "stroke": 'color',
+      "title": 'Legend',
+      "orient": 'top-left',
+      "encode": {
+        "symbols": {
+          "update": {
+            "fill": { value: '' },
+            "strokeWidth": { value: 4 },
+            "size": { value: 60 }
+          }
+        }
+      }
+    }
+  ],
+  "marks": [
+    {
+      "type": "arc",
+      "from": {"data": "table"},
+      "encode": {
+        "enter": {
+          "fill": {"scale": "color", "field": "id"},
+          "x": {"signal": "width / 2"},
+          "y": {"signal": "height / 2"}
+        },
+        "update": {
+          "startAngle": {"field": "startAngle"},
+          "endAngle": {"field": "endAngle"},
+          "padAngle": {"signal": "padAngle"},
+          "innerRadius": {"signal": "innerRadius"},
+          "outerRadius": {"signal": "width / 2"},
+          "cornerRadius": {"signal": "cornerRadius"}
+        }
+      }
+    }
+   ]
+  };
+ 
+  vegaEmbed("#vis7", visSeven);
+  </script>
+
+ </body>
+</html>
