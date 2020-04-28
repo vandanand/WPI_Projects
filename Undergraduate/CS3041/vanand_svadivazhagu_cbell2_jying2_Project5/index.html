@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Affectiva Emotion Detector</title>
+<!-- import jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!--import default Affectiva CSS code-->
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+
+<!--import Affectiva javascript support-->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="https://download.affectiva.com/js/3.2/affdex.js"></script>
+
+<!--import custom CSS-->
+<link rel="stylesheet" href="style.css">
+</head>
+
+<!-- Tip: If you don't understand what an element [<div>] or object in
+the following code is, style it to have a border of a distinct type or color.
+E.g., for <div class="row"> you would add style="border: thickness solid/dashed color"
+like so– <div class="row" style="border: 1px solid #000000;"> then refresh
+the page on your browser and find the element with a border of X properties
+around it.
+-->
+
+<body>
+  <!-- the entire window container -->
+  <div class="container-fluid">
+    <center><font size="30"><strong>Design for Wellness - Design Team 16</strong></font></center>
+
+  <!--START: container for top half of window; goes from above the start/stop/reset buttons to the top of screen -->
+    <div class="row">
+
+      <!--camera container-->
+      <div class="camera-box">
+
+      <!-- actual/'physical' camera containers: col-md-8 (child) & affdex_elements (parent selector) -->
+        <div class="col-md-8" id="affdex_elements"></div>
+          <center>
+          <button id="start" class="bt1" onclick="onStart()">Start</button>
+          <button id="stop" class="bt2" onclick="onStop()">Stop</button>
+          <button id="reset" class="bt3" onclick="onReset()">Reset</button>
+          </center>
+      </div>
+      <div>
+        <div id="video-placeholder"></div>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+      </div>
+      <!-- "emotion tracking results" and "detector log msgs" container -->
+      <div class="col-md-4">
+        <!-- "emotion tracking results" container: title & results -->
+        <div style="max-height:27em;"> <!-- height controls the height of the emotion tracking results container -->
+          <!-- <strong>EMOTION TRACKING RESULTS</strong> -->
+          <p><strong>Enter in a YouTube URL:</strong></p>
+          <div class="form-group">
+              <div class="input-group">
+                  <input type="text" class="form-control" id="start-form" placeholder="Enter a YouTube URL here..." autofocus>
+                  <span class="input-group-btn">
+                      <button id="button" class="btn btn-primary" type="button">Start</button>
+                  </span>
+              </div>
+          </div>
+          <!-- subcontainer that displays the detected emotions -->
+          <!-- <div id="results" style="word-wrap:break-word;"></div> -->
+        </div>
+
+        <!-- "detector log msgs" title container -->
+
+        <!-- "detector log msgs" log container -->
+        <!-- <div id="logs"></div> -->
+
+      </div>
+
+
+      <!-- END of RIGHT SIDE container– the emotion tracking results and detector log msgs -->
+
+    </div>
+    <!-- END of UPPER SCREEN container– camera & logs -->
+
+
+    <!-- START: container that holds bottom half of screen– start/stop/reset buttons, Affectiva detector title, instructions -->
+    <!-- <div>
+      <p>
+        <ol><strong>Instructions</strong>
+        <li>Press the start button to activate the camera and detector. <em>Note: it may take a few moments for everything initialize</em></li>
+        <li>When a face is detected, the probabilities of the different emotions are displayed in the box titled "Emotion Tracking Results".</li>
+        <li> Press the stop button to stop the camera and detection system and/or press reset to restart the detector. </li>
+        </ol>
+      </p>
+    </div> -->
+    <!-- END: BOTTOM half of SCREEN container -->
+
+
+  </div>
+  <!-- END: ENTIRE SCREEN container -->
+
+<!-- Connect locally-hosted default affectiva camera script that makes everything work-->
+<script src="script.js"></script>
+</body>
+</html>
