@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="query_array">
+        <item>Florida</item>
+        <item>New York</item>
+    </string-array>
+</resources>

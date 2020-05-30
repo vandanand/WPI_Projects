@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Travel_Itinerary</string>
+    <string name="action_settings">Settings</string>
+    <string name="HotelText">Available Hotels</string>
+    <string name="itinerary_btn">Itinerary</string>
+    <string name="customerID">Build your Travel Itinerary!</string>
+    <string name="startdate">Start Date</string>
+    <string name="enddate">End Date</string>
+    <string name="transportation_btn">Transportation</string>
+    <string name="hotel_btn">Hotels</string>
+    <string name="restaurant_btn">Restaurants</string>
+    <string name="attractions_btn">Attractions</string>
+    <string name="shopping_btn">Shopping</string>
+    <string name="attract_back_btn">Back</string>
+    <string name="hotels_back_btn">Back</string>
+    <string name="itinerary_back_btn">Back</string>
+    <string name="restaurants_back_btn">Back</string>
+    <string name="shopping_back_btn">Back</string>
+    <string name="transport_back_btn">Back</string>
+    <string name="query_prompt">Choose a Location</string>
+    <string name="alltransportbtn">All Transportation</string>
+    <string name="sorttransportprice">Sort by Price</string>
+    <string name="sorttransportrank">Sort by Rank</string>
+    <string name="allattract">All Attractions</string>
+    <string name="attractprice">Sort by Price</string>
+    <string name="attractrank">Sort by Rank</string>
+    <string name="allhotel">All Hotels</string>
+    <string name="hotelprice">Sort By Price</string>
+    <string name="hotelrank">Sort by Rank</string>
+    <string name="allrest">All Restaurants</string>
+    <string name="restprice">Sort by Price</string>
+    <string name="restrank">Sort by Rank</string>
+    <string name="allshop">All Shopping</string>
+    <string name="shopbrand">Sort by Brand</string>
+    <string name="makepay">Make Payment</string>
+
+</resources>
