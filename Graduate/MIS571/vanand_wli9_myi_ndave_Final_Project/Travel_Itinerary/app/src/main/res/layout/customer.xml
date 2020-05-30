@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/customerID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/customerID"
+        android:textColor="@android:color/black"
+        android:textSize="24sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:orientation="horizontal">
+
+        <Spinner
+            android:id="@+id/locations"
+            android:layout_width="203dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="105dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="160dp"
+            android:layout_marginBottom="5dp"
+            android:dropDownWidth="270dp"
+            android:dropDownSelector="@android:drawable/spinner_background"
+            android:entries="@array/query_array"
+            android:gravity="center"
+            android:paddingTop="5dp"
+            android:prompt="@string/query_prompt" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/datePickerID"
+        android:layout_width="match_parent"
+        android:layout_height="238dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/startdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/startdate" />
+
+        <DatePicker
+            android:id="@+id/datePicker1"
+            android:layout_width="wrap_content"
+            android:layout_height="84dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner" />
+
+        <TextView
+            android:id="@+id/enddate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/enddate" />
+
+        <DatePicker
+            android:id="@+id/datePicker2"
+            android:layout_width="wrap_content"
+            android:layout_height="84dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/transportation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/transportation_btn" />
+
+    <Button
+        android:id="@+id/hotels"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hotel_btn" />
+
+    <Button
+        android:id="@+id/restaurants"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/restaurant_btn" />
+
+    <Button
+        android:id="@+id/attractions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/attractions_btn" />
+
+    <Button
+        android:id="@+id/shopping"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/shopping_btn" />
+
+    <Button
+        android:id="@+id/itinerary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/itinerary_btn" />
+
+</LinearLayout>

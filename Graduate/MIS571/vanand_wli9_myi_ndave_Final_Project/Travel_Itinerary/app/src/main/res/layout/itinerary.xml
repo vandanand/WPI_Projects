@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/Itinerary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Itinerary"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal" />
+
+    <ScrollView
+        android:id="@+id/ItineraryView"
+        android:layout_width="match_parent"
+        android:layout_height="334dp" />
+
+    <Button
+        android:id="@+id/itin_makepay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/makepay" />
+
+    <Button
+        android:id="@+id/ItineraryBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/itinerary_back_btn" />
+
+</LinearLayout>
